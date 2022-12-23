@@ -43,7 +43,6 @@ public class PlayerMovement : MonoBehaviour
 
 
         frontReindeer.transform.position += frontReindeer.transform.TransformDirection(Vector3.right).normalized / 500f;
-        //transform.position += reindeer1.transform.TransformDirection(Vector3.right).normalized / 500f;
 
         if (Input.GetKey(KeyCode.UpArrow))
         {
