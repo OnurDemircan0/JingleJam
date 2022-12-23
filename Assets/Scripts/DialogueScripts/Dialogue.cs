@@ -7,50 +7,82 @@ using UnityEngine.SceneManagement;
 
 public class Dialogue : MonoBehaviour
 {
-    [SerializeField] TMP_Text dialogueText;
-    [SerializeField] string[] dialogueSentences;
+    [SerializeField] TMP_Text santaText;
+    [SerializeField] string[] santaSentences;
+    [SerializeField] TMP_Text heroText;
+    [SerializeField] string[] heroSentences;
     [SerializeField] float writeSpeed;
-    [SerializeField] GameObject continueButton;
+    [SerializeField] GameObject continueButtonSanta;
+    [SerializeField] GameObject continueButtonHero;
     [SerializeField] GameObject startGameButton;
+    [SerializeField] GameObject startDialogueButton;
 
-    int index;
+    int santaIndex, heroIndex;
 
-    private void Start()
-    {
-        StartCoroutine(Yaz());
-    }
     private void Update()
     {
-        if(dialogueText.text == dialogueSentences[index])
+        if(santaText.text == santaSentences[santaIndex])
         {
-            continueButton.SetActive(true);
+            continueButtonSanta.SetActive(true);
+        }
+        if(heroText.text == heroSentences[heroIndex])
+        {
+            continueButtonHero.SetActive(true);
         }
     }
 
-    IEnumerator Yaz()
+    IEnumerator Santa()
     {
-        foreach(char letter in dialogueSentences[index].ToCharArray())
+        foreach(char letter in santaSentences[santaIndex].ToCharArray())
         {
-            dialogueText.text += letter;
+            santaText.text += letter;
             yield return new WaitForSeconds(writeSpeed);
         }
     }
-    public void NextSentence()
+    IEnumerator Hero()
     {
-        continueButton.SetActive(false);
-
-        if(index < dialogueSentences.Length - 1)
+        foreach(char letter in heroSentences[heroIndex].ToCharArray())
         {
-            index++;
-            dialogueText.text = "" ;
-            StartCoroutine(Yaz());
+            heroText.text += letter;
+            yield return new WaitForSeconds(writeSpeed);
+        }
+    }
+    public void NextSentenceSanta()
+    {
+        continueButtonSanta.SetActive(false);
+
+        if(santaIndex < santaSentences.Length - 1)
+        {
+            santaText.text = "" ;
+            StartCoroutine(Hero());
+            santaIndex++;
         }
         else
         {
-            dialogueText.text = "" ;
-            continueButton.SetActive(false);
+            santaText.text = "" ;
+            StartCoroutine(Hero());
+        }
+    }
+    public void NextSentencesHero()
+    {
+        continueButtonHero.SetActive(false);
+
+        if (heroIndex < heroSentences.Length - 1)
+        {
+            heroText.text = "";
+            StartCoroutine(Santa());
+            heroIndex++;
+        }
+        else
+        {
+            heroText.text = "";
             startGameButton.SetActive(true);
         }
+    }
+    public void StartDialogue()
+    {
+        StartCoroutine(Santa());
+        startDialogueButton.SetActive(false);
     }
     public void StartGame()
     {
