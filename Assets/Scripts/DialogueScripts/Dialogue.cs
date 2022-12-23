@@ -16,14 +16,26 @@ public class Dialogue : MonoBehaviour
     [SerializeField] GameObject continueButtonHero;
     [SerializeField] GameObject startGameButton;
     [SerializeField] GameObject startDialogueButton;
+    [SerializeField] GameObject ilgilen;
+    [SerializeField] GameObject ilgilenme;
 
     int santaIndex, heroIndex;
 
     private void Update()
     {
+        Debug.Log(santaIndex);
         if(santaText.text == santaSentences[santaIndex])
         {
-            continueButtonSanta.SetActive(true);
+            if (santaIndex == 1)
+            {
+                ilgilen.SetActive(true);
+                ilgilenme.SetActive(true);
+            }
+            else
+            {
+                continueButtonSanta.SetActive(true);
+            }
+            
         }
         if(heroText.text == heroSentences[heroIndex])
         {
@@ -50,6 +62,8 @@ public class Dialogue : MonoBehaviour
     public void NextSentenceSanta()
     {
         continueButtonSanta.SetActive(false);
+        ilgilen.SetActive(false);
+        ilgilenme.SetActive(false);
 
         if(santaIndex < santaSentences.Length - 1)
         {
@@ -66,7 +80,8 @@ public class Dialogue : MonoBehaviour
     public void NextSentencesHero()
     {
         continueButtonHero.SetActive(false);
-
+        
+    
         if (heroIndex < heroSentences.Length - 1)
         {
             heroText.text = "";
