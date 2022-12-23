@@ -30,7 +30,7 @@ public class PlayerMovement : MonoBehaviour
             {
                 float maxY1 = Mathf.Abs(reindeers[0].transform.position.y - transform.position.y); // Önündeki karakterin y ekseni ile kendi y ekseni arasýndaki farkýn mutlak deðerini buluyor. Bu deðeri karakter önündekinden ne kadar uzaksa o kadar hýzlý hareket etsin diye atadýk.
                 dir1 = (new Vector3(transform.position.x, reindeers[0].transform.position.y, 0f) - transform.position).normalized;
-                transform.position = transform.position + (dir1 / 75f * maxY1 * Time.deltaTime); // Karakter y ekseninde hareket ediyor. Eeðer önündeki karakterin y ekseni ile eþit ise duruyor.
+                transform.position = transform.position + (dir1 / 75f * maxY1); // Karakter y ekseninde hareket ediyor. Eeðer önündeki karakterin y ekseni ile eþit ise duruyor.
                 transform.position = new Vector3(reindeers[0].transform.position.x - 1f, transform.position.y, 0f); // Karakterin önündeki karakter ile mesafesini koruyor.
             }
 
@@ -38,7 +38,7 @@ public class PlayerMovement : MonoBehaviour
             {
                 float maxY2 = Mathf.Abs(reindeers[1].transform.position.y - reindeers[0].transform.position.y);
                 dir2 = (new Vector3(reindeers[0].transform.position.x, reindeers[1].transform.position.y, 0f) - reindeers[0].transform.position).normalized;
-                reindeers[0].transform.position = reindeers[0].transform.position + (dir2 / 75f * maxY2 * Time.deltaTime);
+                reindeers[0].transform.position = reindeers[0].transform.position + (dir2 / 75f * maxY2);
                 reindeers[0].transform.position = new Vector3(reindeers[1].transform.position.x - 0.8f, reindeers[0].transform.position.y, 0f);
             }
 
@@ -46,7 +46,7 @@ public class PlayerMovement : MonoBehaviour
             {
                 float maxY3 = Mathf.Abs(reindeers[2].transform.position.y - reindeers[1].transform.position.y);
                 dir3 = (new Vector3(reindeers[1].transform.position.x, reindeers[2].transform.position.y, 0f) - reindeers[1].transform.position).normalized;
-                reindeers[1].transform.position = reindeers[1].transform.position + (dir3 / 75f * maxY3 * Time.deltaTime);
+                reindeers[1].transform.position = reindeers[1].transform.position + (dir3 / 75f * maxY3);
                 reindeers[1].transform.position = new Vector3(reindeers[2].transform.position.x - 0.8f, reindeers[1].transform.position.y, 0f);
             }
 
