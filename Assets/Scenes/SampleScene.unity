@@ -472,7 +472,7 @@ MonoBehaviour:
   reindeer1: {fileID: 1535559866}
   reindeer2: {fileID: 1530222431}
   reindeer3: {fileID: 1203324383}
-  rotSpeed: 40
+  rotSpeed: 60
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
