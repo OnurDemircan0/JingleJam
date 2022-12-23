@@ -6,6 +6,9 @@ TagManager:
   tags:
   - Enemy
   - Perk
+  - House
+  - Gift
+  - ScoreText
   layers:
   - Default
   - TransparentFX
