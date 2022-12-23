@@ -4,9 +4,7 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public GameObject reindeer1;
-    public GameObject reindeer2;
-    public GameObject reindeer3;
+    public GameObject[] reindeers;
     GameObject frontReindeer;
 
     Vector3 dir1;
@@ -16,74 +14,126 @@ public class PlayerMovement : MonoBehaviour
     public float rotSpeed = 40;
     float angle = 0f;
 
+    public int health = 3;
+
     private void Start()
     {
-        frontReindeer = reindeer3;
+        frontReindeer = reindeers[2];
     }
 
     // Update is called once per frame
     void Update()
     {
-        
-        float maxY1 = Mathf.Abs(reindeer1.transform.position.y - transform.position.y); // Önündeki karakterin y ekseni ile kendi y ekseni arasýndaki farkýn mutlak deðerini buluyor.
-        dir1 = (new Vector3(transform.position.x, reindeer1.transform.position.y, 0f) - transform.position).normalized; 
-        transform.position = transform.position + (dir1 / 75f * maxY1); // Karakter y ekseninde hareket ediyor. Eeðer önündeki karakterin y ekseni ile eþit ise duruyor.
-        transform.position = new Vector3(reindeer1.transform.position.x - 1f, transform.position.y, 0f); // Karakterin önündeki karakter ile mesafesini koruyor.
-
-        float maxY2 = Mathf.Abs(reindeer2.transform.position.y - reindeer1.transform.position.y);
-        dir2 = (new Vector3(reindeer1.transform.position.x, reindeer2.transform.position.y, 0f) - reindeer1.transform.position).normalized;
-        reindeer1.transform.position = reindeer1.transform.position + (dir2 / 75f * maxY2);
-        reindeer1.transform.position = new Vector3(reindeer2.transform.position.x - 0.8f, reindeer1.transform.position.y, 0f);
-        
-
-        float maxY3 = Mathf.Abs(reindeer3.transform.position.y - reindeer2.transform.position.y);
-        dir3 = (new Vector3(reindeer2.transform.position.x, reindeer3.transform.position.y, 0f) - reindeer2.transform.position).normalized;
-        reindeer2.transform.position = reindeer2.transform.position + (dir3 / 75f * maxY3);
-        reindeer2.transform.position = new Vector3(reindeer3.transform.position.x - 0.8f, reindeer2.transform.position.y, 0f);
-        
-
-
-        //frontReindeer.transform.position += frontReindeer.transform.TransformDirection(Vector3.right).normalized / 500f;
-        
-
-        if (Input.GetKey(KeyCode.UpArrow))
+        if(health != 0)
         {
-            angle += rotSpeed * Time.deltaTime;
-            frontReindeer.transform.rotation = Quaternion.Euler(0f, 0f, angle);
-            frontReindeer.transform.position = new Vector3(frontReindeer.transform.position.x, frontReindeer.transform.position.y + 2f * Time.deltaTime, 0f);
-        }
-        else if (Input.GetKey(KeyCode.DownArrow))
-        {
-            angle -= rotSpeed * Time.deltaTime;
-            frontReindeer.transform.rotation = Quaternion.Euler(0f, 0f, angle);
-            frontReindeer.transform.position = new Vector3(frontReindeer.transform.position.x, frontReindeer.transform.position.y - 2f * Time.deltaTime, 0f);
-        }
-        else
-        {
-            if(angle > 0.1)
+            if (health > 0)
             {
-                angle -= rotSpeed * Time.deltaTime;
-                frontReindeer.transform.rotation = Quaternion.Euler(0f, 0f, angle);
+                float maxY1 = Mathf.Abs(reindeers[0].transform.position.y - transform.position.y); // Önündeki karakterin y ekseni ile kendi y ekseni arasýndaki farkýn mutlak deðerini buluyor. Bu deðeri karakter önündekinden ne kadar uzaksa o kadar hýzlý hareket etsin diye atadýk.
+                dir1 = (new Vector3(transform.position.x, reindeers[0].transform.position.y, 0f) - transform.position).normalized;
+                transform.position = transform.position + (dir1 / 75f * maxY1); // Karakter y ekseninde hareket ediyor. Eeðer önündeki karakterin y ekseni ile eþit ise duruyor.
+                transform.position = new Vector3(reindeers[0].transform.position.x - 1f, transform.position.y, 0f); // Karakterin önündeki karakter ile mesafesini koruyor.
             }
-            else if(angle < -0.1)
+
+            if (health > 1)
+            {
+                float maxY2 = Mathf.Abs(reindeers[1].transform.position.y - reindeers[0].transform.position.y);
+                dir2 = (new Vector3(reindeers[0].transform.position.x, reindeers[1].transform.position.y, 0f) - reindeers[0].transform.position).normalized;
+                reindeers[0].transform.position = reindeers[0].transform.position + (dir2 / 75f * maxY2);
+                reindeers[0].transform.position = new Vector3(reindeers[1].transform.position.x - 0.8f, reindeers[0].transform.position.y, 0f);
+            }
+
+            if (health > 2)
+            {
+                float maxY3 = Mathf.Abs(reindeers[2].transform.position.y - reindeers[1].transform.position.y);
+                dir3 = (new Vector3(reindeers[1].transform.position.x, reindeers[2].transform.position.y, 0f) - reindeers[1].transform.position).normalized;
+                reindeers[1].transform.position = reindeers[1].transform.position + (dir3 / 75f * maxY3);
+                reindeers[1].transform.position = new Vector3(reindeers[2].transform.position.x - 0.8f, reindeers[1].transform.position.y, 0f);
+            }
+
+
+            //frontReindeer.transform.position += frontReindeer.transform.TransformDirection(Vector3.right).normalized / 500f;
+            frontReindeer = reindeers[health - 1];
+
+            if (Input.GetKey(KeyCode.UpArrow))
             {
                 angle += rotSpeed * Time.deltaTime;
                 frontReindeer.transform.rotation = Quaternion.Euler(0f, 0f, angle);
+                frontReindeer.transform.position = new Vector3(frontReindeer.transform.position.x, frontReindeer.transform.position.y + 2f * Time.deltaTime, 0f);
+            }
+            else if (Input.GetKey(KeyCode.DownArrow))
+            {
+                angle -= rotSpeed * Time.deltaTime;
+                frontReindeer.transform.rotation = Quaternion.Euler(0f, 0f, angle);
+                frontReindeer.transform.position = new Vector3(frontReindeer.transform.position.x, frontReindeer.transform.position.y - 2f * Time.deltaTime, 0f);
             }
             else
             {
-                angle = 0;
-                frontReindeer.transform.rotation = Quaternion.Euler(0f, 0f, angle);
+                if (angle > 0.1)
+                {
+                    angle -= rotSpeed * Time.deltaTime;
+                    frontReindeer.transform.rotation = Quaternion.Euler(0f, 0f, angle);
+                }
+                else if (angle < -0.1)
+                {
+                    angle += rotSpeed * Time.deltaTime;
+                    frontReindeer.transform.rotation = Quaternion.Euler(0f, 0f, angle);
+                }
+                else
+                {
+                    angle = 0;
+                    frontReindeer.transform.rotation = Quaternion.Euler(0f, 0f, angle);
+                }
+
             }
-            
+
+            // Burasý objelerin bir önündeki objeye bakmasýný saðlýyo.
+            if (health > 0)
+            {
+                transform.right = reindeers[0].transform.position - transform.position;
+            }
+            if (health > 1)
+            {
+                reindeers[0].transform.right = reindeers[1].transform.position - reindeers[0].transform.position;
+            }
+            if (health > 2)
+            {
+                reindeers[1].transform.right = reindeers[2].transform.position - reindeers[1].transform.position;
+            }
+
+            angle = Mathf.Clamp(angle, -17f, 17f);
+
+            if (health == 3)
+            {
+                reindeers[2].SetActive(true);
+                reindeers[1].SetActive(true);
+                reindeers[0].SetActive(true);
+            }
+            else if (health == 2)
+            {
+                reindeers[2].SetActive(false);
+                reindeers[1].SetActive(true);
+                reindeers[0].SetActive(true);
+                reindeers[2].transform.position = new Vector3(reindeers[1].transform.position.x + 0.8f, reindeers[1].transform.position.y, 0f);
+            }
+            else if (health == 1)
+            {
+                reindeers[2].SetActive(false);
+                reindeers[1].SetActive(false);
+                reindeers[0].SetActive(true);
+                reindeers[2].transform.position = new Vector3(reindeers[1].transform.position.x + 0.8f, reindeers[1].transform.position.y, 0f);
+                reindeers[1].transform.position = new Vector3(reindeers[0].transform.position.x + 0.8f, reindeers[0].transform.position.y, 0f);
+            }
+        }
+        else
+        {
+            reindeers[2].SetActive(false);
+            reindeers[1].SetActive(false);
+            reindeers[0].SetActive(false);
+            reindeers[2].transform.position = new Vector3(reindeers[1].transform.position.x + 0.8f, reindeers[1].transform.position.y, 0f);
+            reindeers[1].transform.position = new Vector3(reindeers[0].transform.position.x + 0.8f, reindeers[0].transform.position.y, 0f);
+            reindeers[0].transform.position = new Vector3(transform.position.x + 1f, transform.position.y, 0f);
         }
 
-        // Burasý objelerin bir önündeki objeye bakmasýný saðlýyo.
-        transform.right = reindeer1.transform.position - transform.position;
-        reindeer1.transform.right = reindeer2.transform.position - reindeer1.transform.position;
-        reindeer2.transform.right = reindeer3.transform.position - reindeer2.transform.position;
-        
-        angle = Mathf.Clamp(angle, -17f, 17f);
 
     }
 
