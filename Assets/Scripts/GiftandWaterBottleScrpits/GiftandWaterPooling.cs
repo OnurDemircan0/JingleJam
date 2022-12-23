@@ -12,6 +12,8 @@ public class GiftandWaterPooling : MonoBehaviour
 
     [SerializeField] Transform spawnerPos;
 
+    int random;
+
 
 
     void Update()
@@ -30,7 +32,7 @@ public class GiftandWaterPooling : MonoBehaviour
 
     public void GiftSpawn()
     {
-        int random = Random.Range(0,3);
+        random = Random.Range(0,3);
         sentGift = gifts[random];
         gifts.RemoveAt(random);
         GetGift();
