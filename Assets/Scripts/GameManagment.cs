@@ -6,6 +6,6 @@ public class GameManagment : MonoBehaviour
 {
     private void Start() 
     {
-    
+        Application.targetFrameRate = 60;
     }
 }
