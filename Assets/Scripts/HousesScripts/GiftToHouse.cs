@@ -5,8 +5,8 @@ using TMPro;
 
 public class GiftToHouse : MonoBehaviour
 {
-    int score;    
-    public TMP_Text scoreText;
+    public static int score = 0;    
+    
     private void Start() 
     {
     
@@ -16,7 +16,6 @@ public class GiftToHouse : MonoBehaviour
         if (other.CompareTag("Gift"))
         {
             score++;
-            scoreText.text = score.ToString();
         }
     }
 }

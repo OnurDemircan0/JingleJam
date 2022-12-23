@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class GiftandWaterPooling : MonoBehaviour
 {
@@ -11,13 +12,16 @@ public class GiftandWaterPooling : MonoBehaviour
     GameObject sentWaterBottle;
 
     [SerializeField] Transform spawnerPos;
+    public TMP_Text scoreText;
 
     int random;
 
 
-
+    
     void Update()
     {
+        scoreText.text=GiftToHouse.score.ToString();
+
         if (Input.GetKeyDown(KeyCode.Space))
         {
             GiftSpawn();
@@ -26,6 +30,8 @@ public class GiftandWaterPooling : MonoBehaviour
         {
             WaterBottleSpawn();
         }
+
+        
     }
 
     #region GiftSpawner
