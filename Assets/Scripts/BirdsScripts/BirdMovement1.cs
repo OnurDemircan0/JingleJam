@@ -14,7 +14,6 @@ public class BirdMovement1 : MonoBehaviour
     }
     private void Update()
     {
-        //dir = (new Vector3(player.transform.position.x, player.transform.position.y, 0f) - transform.position).normalized;
         transform.position = transform.position + (dir / 7f);
     }
 }

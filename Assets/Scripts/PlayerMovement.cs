@@ -20,6 +20,8 @@ public class PlayerMovement : MonoBehaviour
 
     public static float time = 0f;
 
+    float frontReindeerPosY;
+
     private void Start()
     {
         frontReindeer = reindeers[2];
@@ -57,17 +59,18 @@ public class PlayerMovement : MonoBehaviour
 
             //frontReindeer.transform.position += frontReindeer.transform.TransformDirection(Vector3.right).normalized / 500f;
             frontReindeer = reindeers[health - 1];
-
+            frontReindeerPosY = frontReindeer.transform.position.y;
+            Debug.Log(frontReindeerPosY);
             if (canMove)
             {
-                if (Input.GetKey(KeyCode.UpArrow))
+                if (Input.GetKey(KeyCode.UpArrow) && frontReindeerPosY < 4.1f)
                 {
                     time = 0;
                     angle += rotSpeed * Time.deltaTime;
                     frontReindeer.transform.rotation = Quaternion.Euler(0f, 0f, angle);
                     frontReindeer.transform.position = new Vector3(frontReindeer.transform.position.x, frontReindeer.transform.position.y + 4f * Time.deltaTime, 0f);
                 }
-                else if (Input.GetKey(KeyCode.DownArrow))
+                else if (Input.GetKey(KeyCode.DownArrow) && frontReindeerPosY > -1.2f)
                 {
                     time = 0;
                     angle -= rotSpeed * Time.deltaTime;
@@ -99,7 +102,7 @@ public class PlayerMovement : MonoBehaviour
                 StartCoroutine(MoveDelay());
                 angle += 17f * Time.deltaTime;
                 frontReindeer.transform.rotation = Quaternion.Euler(0f, 0f, angle);
-                frontReindeer.transform.position = new Vector3(frontReindeer.transform.position.x, frontReindeer.transform.position.y + 1.6f * Time.deltaTime, 0f);
+                frontReindeer.transform.position = new Vector3(frontReindeer.transform.position.x, frontReindeer.transform.position.y + 2.5f * Time.deltaTime, 0f);
                 angle = Mathf.Clamp(angle, -10f, 10f);
             }
 
