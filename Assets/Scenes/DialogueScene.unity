@@ -915,10 +915,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: ilgilenme
+  m_text: uzgunum
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2eb0b42f8a3c2934aa6a833428e63378, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 5186457393206469781, guid: 2eb0b42f8a3c2934aa6a833428e63378, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -981,7 +981,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 1
+  m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &1021780584
@@ -1299,7 +1299,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Hadi Eyvallah ^^
+  m_text: uzgunum noel baba..
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2eb0b42f8a3c2934aa6a833428e63378, type: 2}
   m_sharedMaterial: {fileID: 5186457393206469781, guid: 2eb0b42f8a3c2934aa6a833428e63378, type: 2}
@@ -1918,16 +1918,16 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: HADI DAGITMAYA BASLA
+  m_text: hazirliklar tamam evlat baslyabilirsin>
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2eb0b42f8a3c2934aa6a833428e63378, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 5186457393206469781, guid: 2eb0b42f8a3c2934aa6a833428e63378, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
+    rgba: 4294111986
   m_fontColor: {r: 0.95, g: 0.95, b: 0.95, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
@@ -1945,8 +1945,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 70
-  m_fontSizeBase: 70
+  m_fontSize: 50
+  m_fontSizeBase: 50
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -1984,7 +1984,7 @@ MonoBehaviour:
   m_margin: {x: -89.546936, y: 0, z: -95.51709, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 1
+  m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &1318017772
@@ -2820,16 +2820,27 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   santaText: {fileID: 425929030}
   santaSentences:
-  - MERHABA EVLAT, HOSGELDIN..!
-  - COK UZUN YILLARDIR HASTAYIM.BU YUZDEN COCUKLARA HEDIYE DAGITAMIYORUM.
+  - ho ho ho!!! hosgeldin genc adam.
+  - siparisimi getirdigin icin tesekkur ederim.
+  - "sorma genc adam. yillardir hastaligim yuzunden cocuklara hediyelerini dagitamiyorum.
+    bu beni cok uzuyor ama cok hastay\u0131m."
+  - iste bu yuzden bu siparisi verdim. yardimina ihtiyacim var evlat.
+  - duyduguma gore ortadogu ve balkanlarin en hizli su'cusu senmissin.
+  - o zaman sehrin eski guzel gunlerine donmesi icin yilbasini geri getirebilir misin?
+  - beni cok mutlu ettin evlat. sana minnettarim !
   heroText: {fileID: 1206388165}
   heroSentences:
-  - MERHABA NOEL BABA
-  - MERAK ETME BEN ORTADOGU VE BALKANLARIN EN HIZLI SU DAGITICISI OLARAK YILBASINI
-    GERI GETIRMENE YARDIM EDECEGIM :)
+  - hosbuldum noel baba.
+  - rica ederim noel baba. ama sen iyi gozukmuyorsun.
+  - tum sehir seni cok ozledi. artik yilbaslarinin hic tadi yok. cocuklar cok mutsuz.
+    adeta sehre sessizlik hakim oluyor.
+  - nasil yani noel baba?
+  - evet. bu dogru.
+  - bunu tum cocuklar icin ve senin icin seve seve yapabilirim noel baba.
+  - o zaman biran once tum hazirliklarimizi yapip yilbasini geri getirelim !
   erkenFinalText: {fileID: 1776231364}
   erkenFinalSentences:
-  - "Bunu se\xE7ersen JingleJam'i kaybederiz mk sucusu :@"
+  - ama teklifimi reddedersen JingleJam'i kaybederiz evlat.
   writeSpeed: 0.05
   continueButtonSanta: {fileID: 1570514323}
   continueButtonHero: {fileID: 1083336608}
@@ -2913,10 +2924,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: ilgilen
+  m_text: tabi ki
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2eb0b42f8a3c2934aa6a833428e63378, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 5186457393206469781, guid: 2eb0b42f8a3c2934aa6a833428e63378, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -2979,7 +2990,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 1
+  m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &1911147656
