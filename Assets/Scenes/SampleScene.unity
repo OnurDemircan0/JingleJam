@@ -10367,14 +10367,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6ceafca505383745906cd1403c2f7b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  perkBird: {fileID: 4406748700158723345, guid: bd952bea4d7d7864894b1479e226e0d7, type: 3}
+  perkBird: {fileID: 2116661259829316048, guid: c2a382426507ed543b8a179c0dd20b87, type: 3}
   spawnPoints:
   - {fileID: 136253780}
   - {fileID: 1606483629}
   - {fileID: 1338500911}
   - {fileID: 351733455}
   - {fileID: 179020924}
-  perkBirdSpawnTimes: 20
+  perkBirdSpawnTimes: 5
 --- !u!1 &1973032151
 GameObject:
   m_ObjectHideFlags: 0

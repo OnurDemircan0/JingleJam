@@ -10,7 +10,9 @@ public class BirdSpawner : MonoBehaviour
     public Transform[] spawnPoints;
     int randomBirds, randomPoint;
     public float birdSpawnTimes;
-    float spawnTimes;
+    public static float spawnTimes;
+
+    public static bool stopSpawnBird = false;
 
     void Start()
     {
@@ -18,7 +20,7 @@ public class BirdSpawner : MonoBehaviour
     }
     private void Update()
     {
-        if (PlayerMovement.canMove)
+        if (PlayerMovement.canMove && !stopSpawnBird)
         {
             if (PlayerMovement.time > 2f && spawnTimes <= 0)
             {
@@ -42,6 +44,16 @@ public class BirdSpawner : MonoBehaviour
             Destroy(instantiatedBirds, 4f);
         }
         
+    }
+
+    public static IEnumerator StartSpawnBird()
+    {
+        if (!stopSpawnBird)
+        {
+            stopSpawnBird = true;
+            yield return new WaitForSeconds(1f);
+            stopSpawnBird = false;
+        }
     }
 
 }
