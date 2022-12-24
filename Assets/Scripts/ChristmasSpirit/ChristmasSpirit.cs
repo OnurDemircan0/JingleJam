@@ -13,8 +13,6 @@ public class ChristmasSpirit : MonoBehaviour
         InvokeRepeating("FallingSpirit",1,fallingTime);
     }
 
-    
-
     private void Update() 
     {
         if(GiftToHouse.score > 10 && GiftToHouse.score < 20)
@@ -25,6 +23,7 @@ public class ChristmasSpirit : MonoBehaviour
         {
             fallingTime = 0.6f;
         }
+        spirit = Mathf.Clamp(spirit, 0, 100);
         spiritText.text = spirit.ToString();
     }
     public void FallingSpirit()
