@@ -8721,13 +8721,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   birds:
-  - {fileID: 4873023014051286186, guid: f1a8b5f2d8f850543b16bf2ae9e4bdf5, type: 3}
-  - {fileID: 2894208532699800262, guid: 300cfc0d53a956140ad131aaf6947ad0, type: 3}
-  - {fileID: 3751684232110247788, guid: 8f143bd62058ff84cad56746c6c0d632, type: 3}
+  - {fileID: 2675882330987175704, guid: d30c0c3ea140b5345bbe98adedfe994c, type: 3}
+  - {fileID: 6207082703798328118, guid: 2e2253315029f5049abff8928e905a3f, type: 3}
+  - {fileID: 4469049915491061387, guid: 78cbd8f105c6f4f408d26bbf89da9139, type: 3}
   angryBirds:
-  - {fileID: 4873023014051286186, guid: 1ed74bac279bd41408725b482c349711, type: 3}
-  - {fileID: 2894208532699800262, guid: 762e6d61d070b77409764f508a718b3f, type: 3}
-  - {fileID: 3751684232110247788, guid: 5e4ffdd91114f2d4ba40d09cad5c1119, type: 3}
+  - {fileID: 6207082703798328118, guid: a95a673ade2e1fa40ba7d8c0a566c67b, type: 3}
+  - {fileID: 4469049915491061387, guid: 9542801f88afce0449b46d6b2000d392, type: 3}
+  - {fileID: 2675882330987175704, guid: 677eaef2b62ad74408a03156d841415b, type: 3}
   spawnPoints:
   - {fileID: 136253780}
   - {fileID: 1606483629}
