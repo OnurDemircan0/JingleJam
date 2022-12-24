@@ -12,9 +12,10 @@ GameObject:
   - component: {fileID: 5052936119630255679}
   - component: {fileID: 6140590786622062351}
   - component: {fileID: 6804895479667637850}
+  - component: {fileID: -7360503284090716633}
   m_Layer: 0
   m_Name: AngryBlue
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -118,3 +119,37 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 92b0b08cd99411e479fa5366173756b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!68 &-7360503284090716633
+EdgeCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6207082703798328118}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_EdgeRadius: 0
+  m_Points:
+  - {x: 0.437891, y: 0.20677936}
+  - {x: 0.3464079, y: 0.20538163}
+  - {x: 0.20335579, y: 0.19900858}
+  - {x: 0.12832642, y: 0.39585996}
+  - {x: -0.072309494, y: 0.3894801}
+  - {x: -0.14405632, y: 0.28644538}
+  - {x: -0.18535805, y: 0.29349482}
+  - {x: -0.3050871, y: 0.28768337}
+  - {x: -0.40948296, y: 0.17609406}
+  - {x: -0.13023853, y: 0}
+  - {x: -0.056388855, y: -0.034463167}
+  - {x: 0.16234016, y: -0.025685787}
+  - {x: 0.27773285, y: 0.048363686}
+  - {x: 0.42861176, y: 0.20185614}
+  m_AdjacentStartPoint: {x: 0, y: 0}
+  m_AdjacentEndPoint: {x: 0, y: 0}
+  m_UseAdjacentStartPoint: 0
+  m_UseAdjacentEndPoint: 0

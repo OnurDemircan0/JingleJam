@@ -14,7 +14,7 @@ public class PlayerMovement : MonoBehaviour
     public float rotSpeed = 40;
     float angle = 0f;
 
-    public int health = 3;
+    public static int health = 3;
 
     public static bool canMove = false;
 
@@ -60,7 +60,6 @@ public class PlayerMovement : MonoBehaviour
             //frontReindeer.transform.position += frontReindeer.transform.TransformDirection(Vector3.right).normalized / 500f;
             frontReindeer = reindeers[health - 1];
             frontReindeerPosY = frontReindeer.transform.position.y;
-            Debug.Log(frontReindeerPosY);
             if (canMove)
             {
                 if (Input.GetKey(KeyCode.UpArrow) && frontReindeerPosY < 4.1f)
