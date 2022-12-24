@@ -9,6 +9,10 @@ public class HousesSpawner : MonoBehaviour
     int random;
     [SerializeField] Transform spawnerPos;
 
+    private void Start() 
+    {
+        InvokeRepeating("HouseSpawn",1,2);
+    }
     private void Update() 
     {
         if (Input.GetKeyDown(KeyCode.T))
@@ -28,7 +32,7 @@ public class HousesSpawner : MonoBehaviour
     public void GetHouse()
     {
         sentHouse.SetActive(true);
-        sentHouse.GetComponent<Rigidbody2D>().velocity = Vector2.left * 10;
+        sentHouse.GetComponent<Rigidbody2D>().velocity = Vector2.left * 5;
         houses.Add(sentHouse);
         sentHouse.transform.position = spawnerPos.position;
     }
