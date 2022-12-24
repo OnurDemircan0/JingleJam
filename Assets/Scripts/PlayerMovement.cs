@@ -16,7 +16,7 @@ public class PlayerMovement : MonoBehaviour
 
     public int health = 3;
 
-    bool canMove = false;
+    public static bool canMove = false;
 
     private void Start()
     {

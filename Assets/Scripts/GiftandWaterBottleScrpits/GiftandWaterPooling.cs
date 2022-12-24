@@ -22,15 +22,17 @@ public class GiftandWaterPooling : MonoBehaviour
     {
         scoreText.text=GiftToHouse.score.ToString();
 
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (PlayerMovement.canMove)
         {
-            StartCoroutine(SpawnDelay());
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                StartCoroutine(SpawnDelay());
+            }
+            if (Input.GetKeyDown(KeyCode.G))
+            {
+                WaterBottleSpawn();
+            }
         }
-        if (Input.GetKeyDown(KeyCode.G))
-        {
-            WaterBottleSpawn();
-        }
-
         
     }
 
