@@ -4,8 +4,8 @@ using UnityEngine;
 using TMPro;
 public class ChristmasSpirit : MonoBehaviour
 {
-    float spirit = 100;
-    float fallingTime = 0.1f;
+    public static float spirit = 100;
+    float fallingTime = 1;
     [SerializeField] TMP_Text spiritText;
 
     private void Start() 
@@ -17,7 +17,14 @@ public class ChristmasSpirit : MonoBehaviour
 
     private void Update() 
     {
-        Debug.Log(spirit);
+        if(GiftToHouse.score > 10 && GiftToHouse.score < 20)
+        {
+            fallingTime = 0.8f;
+        }
+        else if(GiftToHouse.score > 20 && GiftToHouse.score < 30)
+        {
+            fallingTime = 0.6f;
+        }
         spiritText.text = spirit.ToString();
     }
     public void FallingSpirit()

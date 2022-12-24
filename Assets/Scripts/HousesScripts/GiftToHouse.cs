@@ -16,6 +16,11 @@ public class GiftToHouse : MonoBehaviour
         if (other.CompareTag("Gift"))
         {
             score++;
+            if (ChristmasSpirit.spirit < 100)
+            {
+                ChristmasSpirit.spirit += 10;
+            }
+            
         }
     }
 }
