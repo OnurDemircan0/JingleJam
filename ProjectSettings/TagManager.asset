@@ -11,6 +11,7 @@ TagManager:
   - ScoreText
   - Chimney
   - ChristmasSpirit
+  - Ground
   layers:
   - Default
   - TransparentFX

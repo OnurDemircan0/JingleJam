@@ -7,6 +7,7 @@ public class DisappearingEffect : MonoBehaviour
     Vector3 firstScale;
     bool disappear = false;
     AudioSource audioS;
+    bool grounded = false;
 
     Rigidbody2D rb2d;
     // Start is called before the first frame update
@@ -26,6 +27,11 @@ public class DisappearingEffect : MonoBehaviour
             transform.localScale *= 40f * Time.deltaTime;
             StartCoroutine(ResetDelay());
         }
+        if(grounded)
+        {
+            transform.position = new Vector3(transform.position.x - 5f * Time.deltaTime, transform.position.y,transform.position.z);
+            StartCoroutine(ResetDelay2());
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -34,6 +40,12 @@ public class DisappearingEffect : MonoBehaviour
         {
             disappear = true;
             audioS.Play();
+        }
+        else if(collision.CompareTag("Ground"))
+        {
+            grounded = true;
+            ChristmasSpirit.spirit -= 10;
+            rb2d.simulated = false;
         }
     }
 
@@ -45,5 +57,11 @@ public class DisappearingEffect : MonoBehaviour
         transform.localScale = firstScale;
         rb2d.simulated = true;
     }
-
+    IEnumerator ResetDelay2()
+    {
+        yield return new WaitForSeconds(0.3f); //Buradaki s�re gift spawn etme delay i ile ayn� olacak.
+        gameObject.SetActive(false);
+        grounded = false;
+        rb2d.simulated = true;
+    }
 }
