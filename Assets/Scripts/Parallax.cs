@@ -14,7 +14,7 @@ public class Parallax : MonoBehaviour
 
         if (_cam.position.x >= transform.position.x + 18f)
         {
-            transform.position = new Vector2(_cam.position.x+18f,transform.position.y);
+            transform.position = new Vector2(_cam.position.x+17.4f,transform.position.y);
         }
     }
 }
