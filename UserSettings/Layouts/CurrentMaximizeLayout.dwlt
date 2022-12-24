@@ -24,7 +24,7 @@ MonoBehaviour:
   m_MinSize: {x: 400, y: 200}
   m_MaxSize: {x: 32384, y: 16192}
   vertical: 0
-  controlID: 78065
+  controlID: 95061
 --- !u!114 &2
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -141,7 +141,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 200}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 1
-  controlID: 78066
+  controlID: 95037
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -167,7 +167,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 100}
   m_MaxSize: {x: 24288, y: 8096}
   vertical: 0
-  controlID: 78067
+  controlID: 95038
 --- !u!114 &5
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -225,9 +225,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 42c2fdff4cbdfdff98bcfdffb0c1fdff4abdfdff96bcfdff84c1fdff48bdfdff94bcfdff58c1fdff46bdfdff92bcfdff0cc1fdff44bdfdff90bcfdff
-      m_LastClickedID: -148336
-      m_ExpandedIDs: 0cc1fdff58c1fdff84c1fdffb0c1fdff42c2fdffb2c4fdff5c67feffa894feff3695feffbee9feffc4e9feffcae9feffd4e9feffd8e9feff0c96ffffd0dbffff7efaffff48610000b8610000307d0000348400007a840000b28400002caf00003aaf00008aaf000004b00000
+      m_SelectedIDs: 7eae0000
+      m_LastClickedID: 0
+      m_ExpandedIDs: 0cc1fdff58c1fdff84c1fdffb0c1fdff42c2fdff5c67feffa894feff3695feffbee9feffc4e9feffcae9feffd4e9feffd8e9feff0c96ffffd0dbffff7efaffff48610000b8610000307d0000348400007a840000b284000088ae00002caf00003aaf00008aaf000004b00000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -354,7 +354,7 @@ MonoBehaviour:
       floating: 0
       collapsed: 0
       displayed: 1
-      snapOffset: {x: 0, y: 0}
+      snapOffset: {x: 0, y: 25}
       snapOffsetDelta: {x: 0, y: 0}
       snapCorner: 0
       id: unity-transform-toolbar
@@ -557,9 +557,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -0.25216016, y: -0.58993214, z: 0.059261754}
+    m_Target: {x: -2.2490342, y: -2.2294252, z: 0.14636539}
     speed: 2
-    m_Value: {x: -0.25216016, y: -0.58993214, z: 0.059261754}
+    m_Value: {x: -2.2490342, y: -2.2294252, z: 0.14636539}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -610,9 +610,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 19.793104
+    m_Target: 4.8907204
     speed: 2
-    m_Value: 19.793104
+    m_Value: 4.8907204
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -882,21 +882,21 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Scripts
+    - Assets/Prefabs/BirdsPrefabs
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Scripts
+  - Assets/Prefabs/BirdsPrefabs
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\canak\Documents\GitHub\JingleJam
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 109}
-    m_SelectedIDs: 0a640000
-    m_LastClickedID: 25610
+    m_SelectedIDs: 4e640000
+    m_LastClickedID: 25678
     m_ExpandedIDs: 0000000006640000086400000a6400000c6400000e64000014640000486400003cc2000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -950,9 +950,9 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: 42c2fdff4cbdfdff98bcfdffb0c1fdff4abdfdff96bcfdff84c1fdff48bdfdff94bcfdff58c1fdff46bdfdff92bcfdff0cc1fdff44bdfdff90bcfdff
-    m_LastClickedInstanceID: -146878
-    m_HadKeyboardFocusLastEvent: 0
+    m_SelectedInstanceIDs: 7eae0000
+    m_LastClickedInstanceID: 44670
+    m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs: c6230000be6100006662000000000000fe950000c29500009a620000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -969,7 +969,7 @@ MonoBehaviour:
       m_IsRenaming: 0
       m_OriginalEventType: 11
       m_IsRenamingFilename: 1
-      m_ClientGUIView: {fileID: 11}
+      m_ClientGUIView: {fileID: 9}
     m_CreateAssetUtility:
       m_EndAction: {fileID: 0}
       m_InstanceID: 0
@@ -1039,7 +1039,7 @@ MonoBehaviour:
     m_SaveData: []
   m_LockTracker:
     m_IsLocked: 0
-  m_LastSelectedObjectID: -148336
+  m_LastSelectedObjectID: 75368
 --- !u!114 &15
 MonoBehaviour:
   m_ObjectHideFlags: 52

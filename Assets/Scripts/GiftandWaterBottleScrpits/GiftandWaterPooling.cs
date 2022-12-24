@@ -78,7 +78,8 @@ public class GiftandWaterPooling : MonoBehaviour
     public void GetWaterBottle()
     {
         sentWaterBottle.SetActive(true);
-        sentWaterBottle.GetComponent<Rigidbody2D>().velocity = Vector2.right * 15;
+        sentWaterBottle.GetComponent<Rigidbody2D>().velocity = Vector2.right * 7;
+        sentWaterBottle.GetComponent<Rigidbody2D>().AddTorque(-800);
         waterBottles.Add(sentWaterBottle);
         sentWaterBottle.transform.position = spawnerPos.position;
     }
