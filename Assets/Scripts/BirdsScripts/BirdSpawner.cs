@@ -6,27 +6,42 @@ public class BirdSpawner : MonoBehaviour
 {
     GameObject instantiatedBirds;
     public GameObject[] birds;
+    public GameObject[] angryBirds;
     public Transform[] spawnPoints;
     int randomBirds, randomPoint;
     public float birdSpawnTimes;
     float spawnTimes;
+
     void Start()
     {
         spawnTimes = birdSpawnTimes;
     }
     private void Update()
     {
-        if (spawnTimes <= 0)
+        if (PlayerMovement.canMove)
         {
-            randomBirds = Random.Range(0, birds.Length);
-            randomPoint = Random.Range(0, spawnPoints.Length);
-            instantiatedBirds = Instantiate(birds[randomBirds], spawnPoints[randomPoint].transform.position, Quaternion.identity);
-            spawnTimes = birdSpawnTimes;
-        }
-        else
-        {
+            if (PlayerMovement.time > 2f && spawnTimes <= 0)
+            {
+                randomBirds = Random.Range(0, angryBirds.Length);
+                randomPoint = Random.Range(0, spawnPoints.Length);
+                instantiatedBirds = Instantiate(angryBirds[randomBirds], spawnPoints[randomPoint].transform.position, Quaternion.identity);
+                spawnTimes = birdSpawnTimes;
+            }
+            else
+            {
+                if (spawnTimes <= 0)
+                {
+                    randomBirds = Random.Range(0, birds.Length);
+                    randomPoint = Random.Range(0, spawnPoints.Length);
+                    instantiatedBirds = Instantiate(birds[randomBirds], spawnPoints[randomPoint].transform.position, Quaternion.identity);
+                    spawnTimes = birdSpawnTimes;
+
+                }
+            }
             spawnTimes -= Time.deltaTime;
+            Destroy(instantiatedBirds, 4f);
         }
-        Destroy(instantiatedBirds, 4f);
+        
     }
+
 }

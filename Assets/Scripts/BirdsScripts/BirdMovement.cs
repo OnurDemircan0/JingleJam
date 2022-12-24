@@ -7,6 +7,9 @@ public class BirdMovement : MonoBehaviour
     Vector2 enemyPos;
     public float speed;
 
+    GameObject player;
+    Vector3 dir;
+
     private void Start()
     {
         enemyPos = transform.position;

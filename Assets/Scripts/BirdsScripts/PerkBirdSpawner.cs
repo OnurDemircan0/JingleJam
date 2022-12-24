@@ -12,16 +12,20 @@ public class PerkBirdSpawner : MonoBehaviour
     int randomPoint;
     void Update()
     {
-        if (spawnTimes <= 0)
+        if (PlayerMovement.canMove)
         {
-            randomPoint = Random.Range(0, spawnPoints.Length);
-            instantiatedPerkBird = Instantiate(perkBird, spawnPoints[randomPoint].transform.position, Quaternion.identity);
-            spawnTimes = perkBirdSpawnTimes;
+            if (spawnTimes <= 0)
+            {
+                randomPoint = Random.Range(0, spawnPoints.Length);
+                instantiatedPerkBird = Instantiate(perkBird, spawnPoints[randomPoint].transform.position, Quaternion.identity);
+                spawnTimes = perkBirdSpawnTimes;
+            }
+            else
+            {
+                spawnTimes -= Time.deltaTime;
+            }
+            Destroy(instantiatedPerkBird, 4f);
         }
-        else
-        {
-            spawnTimes -= Time.deltaTime;
-        }
-        Destroy(instantiatedPerkBird, 4f);
+        
     }
 }

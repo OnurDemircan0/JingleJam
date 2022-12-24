@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     public GameObject[] reindeers;
-    GameObject frontReindeer;
+    public static GameObject frontReindeer;
 
     Vector3 dir1;
     Vector3 dir2;
@@ -17,6 +17,8 @@ public class PlayerMovement : MonoBehaviour
     public int health = 3;
 
     public static bool canMove = false;
+
+    public static float time = 0f;
 
     private void Start()
     {
@@ -60,18 +62,21 @@ public class PlayerMovement : MonoBehaviour
             {
                 if (Input.GetKey(KeyCode.UpArrow))
                 {
+                    time = 0;
                     angle += rotSpeed * Time.deltaTime;
                     frontReindeer.transform.rotation = Quaternion.Euler(0f, 0f, angle);
                     frontReindeer.transform.position = new Vector3(frontReindeer.transform.position.x, frontReindeer.transform.position.y + 4f * Time.deltaTime, 0f);
                 }
                 else if (Input.GetKey(KeyCode.DownArrow))
                 {
+                    time = 0;
                     angle -= rotSpeed * Time.deltaTime;
                     frontReindeer.transform.rotation = Quaternion.Euler(0f, 0f, angle);
                     frontReindeer.transform.position = new Vector3(frontReindeer.transform.position.x, frontReindeer.transform.position.y - 4f * Time.deltaTime, 0f);
                 }
                 else
                 {
+                    time += Time.deltaTime;
                     if (angle > 0.1)
                     {
                         angle -= rotSpeed * Time.deltaTime;

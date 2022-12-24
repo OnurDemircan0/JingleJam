@@ -22,11 +22,14 @@ public class HousesSpawner : MonoBehaviour
     }
 
     public void HouseSpawn()
-    {   
-        random = Random.Range(0,2);
-        sentHouse = houses[random];
-        houses.RemoveAt(random);
-        GetHouse();
+    {
+        if (PlayerMovement.canMove)
+        {
+            random = Random.Range(0, 2);
+            sentHouse = houses[random];
+            houses.RemoveAt(random);
+            GetHouse();
+        }
     }
 
     public void GetHouse()
