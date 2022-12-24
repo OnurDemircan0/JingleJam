@@ -6,12 +6,14 @@ public class DisappearingEffect : MonoBehaviour
 {
     Vector3 firstScale;
     bool disappear = false;
+    AudioSource audio;
 
     Rigidbody2D rb2d;
     // Start is called before the first frame update
     void Start()
     {
         rb2d = GetComponent<Rigidbody2D>();
+        audio = GetComponent<AudioSource>();
         firstScale = transform.localScale;
     }
 
@@ -31,6 +33,7 @@ public class DisappearingEffect : MonoBehaviour
         if (collision.CompareTag("Chimney"))
         {
             disappear = true;
+            audio.Play();
         }
     }
 
