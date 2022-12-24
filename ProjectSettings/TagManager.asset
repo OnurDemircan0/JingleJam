@@ -10,6 +10,7 @@ TagManager:
   - Gift
   - ScoreText
   - Chimney
+  - ChristmasSpirit
   layers:
   - Default
   - TransparentFX
