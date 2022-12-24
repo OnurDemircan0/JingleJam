@@ -24,7 +24,7 @@ public class DisappearingEffect : MonoBehaviour
         if (disappear)
         {
             rb2d.simulated = false;
-            transform.localScale *= 40f * Time.deltaTime;
+            transform.localScale *= (40f * Time.deltaTime);
             StartCoroutine(ResetDelay());
         }
         if(grounded)
