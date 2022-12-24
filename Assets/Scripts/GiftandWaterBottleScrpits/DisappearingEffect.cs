@@ -6,14 +6,14 @@ public class DisappearingEffect : MonoBehaviour
 {
     Vector3 firstScale;
     bool disappear = false;
-    AudioSource audio;
+    AudioSource audioS;
 
     Rigidbody2D rb2d;
     // Start is called before the first frame update
     void Start()
     {
         rb2d = GetComponent<Rigidbody2D>();
-        audio = GetComponent<AudioSource>();
+        audioS = GetComponent<AudioSource>();
         firstScale = transform.localScale;
     }
 
@@ -33,13 +33,13 @@ public class DisappearingEffect : MonoBehaviour
         if (collision.CompareTag("Chimney"))
         {
             disappear = true;
-            audio.Play();
+            audioS.Play();
         }
     }
 
     IEnumerator ResetDelay()
     {
-        yield return new WaitForSeconds(0.3f); //Buradaki süre gift spawn etme delay i ile ayný olacak.
+        yield return new WaitForSeconds(0.3f); //Buradaki sï¿½re gift spawn etme delay i ile aynï¿½ olacak.
         gameObject.SetActive(false);
         disappear = false;
         transform.localScale = firstScale;
