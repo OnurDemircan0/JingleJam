@@ -78,8 +78,8 @@ public class Dialogue : MonoBehaviour
     public void NextSentenceSanta()
     {
         continueButtonSanta.SetActive(false);
-        santa.GetComponent<SpriteRenderer>().color = new Color(1,1,1,0.5f);
-        kurye.GetComponent<SpriteRenderer>().color = new Color(1,1,1,1f);
+        santa.GetComponent<SpriteRenderer>().color = Color.HSVToRGB(0, 0, 0.35f);
+        kurye.GetComponent<SpriteRenderer>().color = Color.HSVToRGB(0, 0, 0.7f);
         ilgilen.SetActive(false);
         ilgilenme.SetActive(false);
 
@@ -98,8 +98,8 @@ public class Dialogue : MonoBehaviour
     public void NextSentencesHero()
     {
         continueButtonHero.SetActive(false);
-        kurye.GetComponent<SpriteRenderer>().color = new Color(1,1,1,0.5f);
-        santa.GetComponent<SpriteRenderer>().color = new Color(1,1,1,1f);
+        kurye.GetComponent<SpriteRenderer>().color = Color.HSVToRGB(0, 0, 0.35f);
+        santa.GetComponent<SpriteRenderer>().color = Color.HSVToRGB(0, 0, 0.7f);
         if (heroIndex < heroSentences.Length - 1)
         {
             heroText.text = "";
@@ -114,15 +114,15 @@ public class Dialogue : MonoBehaviour
     }
     public void StartDialogue()
     {
-        kurye.GetComponent<SpriteRenderer>().color = new Color(1,1,1,0.5f);
+        kurye.GetComponent<SpriteRenderer>().color = Color.HSVToRGB(0,0,0.35f);
         StartCoroutine(Santa());
         startDialogueButton.SetActive(false);
     }
     public void Ilgilenme()
     {
         santaText.text = "";
-        kurye.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 0.5f);
-        santa.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 1f);
+        kurye.GetComponent<SpriteRenderer>().color = Color.HSVToRGB(0, 0, 0.35f);
+        santa.GetComponent<SpriteRenderer>().color = Color.HSVToRGB(0, 0, 0.7f);
         StartCoroutine(ErkenFinal());
         ilgilen.SetActive(false);
         ilgilenme.SetActive(false);
