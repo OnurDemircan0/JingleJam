@@ -11,6 +11,8 @@ public class Dialogue : MonoBehaviour
     [SerializeField] string[] santaSentences;
     [SerializeField] TMP_Text heroText;
     [SerializeField] string[] heroSentences;
+    [SerializeField] TMP_Text erkenFinalText;
+    [SerializeField] string[] erkenFinalSentences;
     [SerializeField] float writeSpeed;
     [SerializeField] GameObject continueButtonSanta;
     [SerializeField] GameObject continueButtonHero;
@@ -18,10 +20,11 @@ public class Dialogue : MonoBehaviour
     [SerializeField] GameObject startDialogueButton;
     [SerializeField] GameObject ilgilen;
     [SerializeField] GameObject ilgilenme;
+    [SerializeField] GameObject erkenFinalButton;
     [SerializeField] GameObject santa;
     [SerializeField] GameObject kurye;
 
-    int santaIndex, heroIndex;
+    int santaIndex, heroIndex, erkenFinalIndex;
 
     private void Update()
     {
@@ -43,8 +46,19 @@ public class Dialogue : MonoBehaviour
         {
             continueButtonHero.SetActive(true);
         }
+        if(erkenFinalText.text == erkenFinalSentences[erkenFinalIndex])
+        {
+            erkenFinalButton.SetActive(true);
+        }
     }
-
+    IEnumerator ErkenFinal()
+    {
+        foreach(char letter in erkenFinalSentences[erkenFinalIndex].ToCharArray())
+        {
+            erkenFinalText.text += letter;
+            yield return new WaitForSeconds(writeSpeed);
+        }
+    }
     IEnumerator Santa()
     {
         foreach(char letter in santaSentences[santaIndex].ToCharArray())
@@ -103,6 +117,19 @@ public class Dialogue : MonoBehaviour
         kurye.GetComponent<SpriteRenderer>().color = new Color(1,1,1,0.5f);
         StartCoroutine(Santa());
         startDialogueButton.SetActive(false);
+    }
+    public void Ilgilenme()
+    {
+        santaText.text = "";
+        kurye.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 0.5f);
+        santa.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 1f);
+        StartCoroutine(ErkenFinal());
+        ilgilen.SetActive(false);
+        ilgilenme.SetActive(false);
+    }
+    public void ErkenFinalExit()
+    {
+        Application.Quit();
     }
     public void StartGame()
     {
