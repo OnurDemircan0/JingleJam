@@ -18,6 +18,8 @@ public class Dialogue : MonoBehaviour
     [SerializeField] GameObject startDialogueButton;
     [SerializeField] GameObject ilgilen;
     [SerializeField] GameObject ilgilenme;
+    [SerializeField] GameObject santa;
+    [SerializeField] GameObject kurye;
 
     int santaIndex, heroIndex;
 
@@ -62,6 +64,8 @@ public class Dialogue : MonoBehaviour
     public void NextSentenceSanta()
     {
         continueButtonSanta.SetActive(false);
+        santa.GetComponent<SpriteRenderer>().color = new Color(1,1,1,0.5f);
+        kurye.GetComponent<SpriteRenderer>().color = new Color(1,1,1,1f);
         ilgilen.SetActive(false);
         ilgilenme.SetActive(false);
 
@@ -80,8 +84,8 @@ public class Dialogue : MonoBehaviour
     public void NextSentencesHero()
     {
         continueButtonHero.SetActive(false);
-        
-    
+        kurye.GetComponent<SpriteRenderer>().color = new Color(1,1,1,0.5f);
+        santa.GetComponent<SpriteRenderer>().color = new Color(1,1,1,1f);
         if (heroIndex < heroSentences.Length - 1)
         {
             heroText.text = "";
@@ -96,6 +100,7 @@ public class Dialogue : MonoBehaviour
     }
     public void StartDialogue()
     {
+        kurye.GetComponent<SpriteRenderer>().color = new Color(1,1,1,0.5f);
         StartCoroutine(Santa());
         startDialogueButton.SetActive(false);
     }
