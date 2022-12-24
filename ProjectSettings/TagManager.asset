@@ -9,6 +9,7 @@ TagManager:
   - House
   - Gift
   - ScoreText
+  - Chimney
   layers:
   - Default
   - TransparentFX
