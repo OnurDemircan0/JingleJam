@@ -31,7 +31,7 @@ public class Dialogue : MonoBehaviour
         Debug.Log(santaIndex);
         if(santaText.text == santaSentences[santaIndex])
         {
-            if (santaIndex == 5)
+            if (santaIndex == 4)
             {
                 ilgilen.SetActive(true);
                 ilgilenme.SetActive(true);

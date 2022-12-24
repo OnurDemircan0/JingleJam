@@ -2820,24 +2820,33 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   santaText: {fileID: 425929030}
   santaSentences:
-  - ho ho ho!!! hosgeldin genc adam.
-  - siparisimi getirdigin icin tesekkur ederim.
-  - "sorma genc adam. yillardir hastaligim yuzunden cocuklara hediyelerini dagitamiyorum.
-    bu beni cok uzuyor ama cok hastay\u0131m."
-  - iste bu yuzden bu siparisi verdim. yardimina ihtiyacim var evlat.
-  - duyduguma gore ortadogu ve balkanlarin en hizli su'cusu senmissin.
-  - o zaman sehrin eski guzel gunlerine donmesi icin yilbasini geri getirebilir misin?
-  - beni cok mutlu ettin evlat. sana minnettarim !
+  - ho ho ho !!! hosgeldin evlat.
+  - sorma evlat. artik yaslandim ve cocuklara hediye dagitmaya cikamiyorum.
+  - iste bende bu yuzden bu siparisi verdim.
+  - duyduguma gore orta dogu ve balkanlarin en hizli su'cusu senmissin evlat.
+  - cocuklara o eski guzel gunleri yasatmak icin hediyeleri dagitmak ister misin?
+  - aceleci olma evlat bu is sandigin kadar kolay degil.
+  - hediyeleri evlerin tam bacalarina birakman lazim. hediyeler sandigin kadar cok
+    degil ve bosa atarsan noel ruhu kaybedeceksin.
+  - bunu anlaman icin yasaman gerek evlat. ama ruhu yuksek tutman senin icin iyi
+    olacak.
+  - aslinda her cocuk hediyeyi hakeder. ama bu yilbasinda yaramaz cocuklara hediye
+    dagitmak yok.
+  - "birde hediyeleri dagitirken kuslara carpmamamalisin. ama aralar\u0131nda sana
+    yardim etmek isteyenleri de gozden kacirma."
   heroText: {fileID: 1206388165}
   heroSentences:
-  - hosbuldum noel baba.
-  - rica ederim noel baba. ama sen iyi gozukmuyorsun.
-  - tum sehir seni cok ozledi. artik yilbaslarinin hic tadi yok. cocuklar cok mutsuz.
-    adeta sehre sessizlik hakim oluyor.
-  - nasil yani noel baba?
-  - evet. bu dogru.
-  - bunu tum cocuklar icin ve senin icin seve seve yapabilirim noel baba.
-  - o zaman biran once tum hazirliklarimizi yapip yilbasini geri getirelim !
+  - hosbuldum noel baba. nerelerdesin sen? yillardir cocuklar seni bekliyor.
+  - cocuklar seni cok ozledi ve hepsi cok mutsuz noel baba. adeta dunyaya sessizlik
+    hakim.
+  - nasil yani?
+  - evet noel baba. bu dogru.
+  - bu harika ! o zaman hemen hazirliklara baslamaliyiz.
+  - ne yapmam gerekiyor?
+  - noel ruhu da ne?
+  - anladim. peki baska ne yapmam gerekiyor?
+  - bu fikri pek sevmedim. ama sen diyorsan vardir bildigin noel baba.
+  - merak etme noel baba. ustesinden gelebilirim. hadi hazirliklara baslayalim.
   erkenFinalText: {fileID: 1776231364}
   erkenFinalSentences:
   - ama teklifimi reddedersen JingleJam'i kaybederiz evlat.
