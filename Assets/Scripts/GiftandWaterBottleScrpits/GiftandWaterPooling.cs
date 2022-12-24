@@ -16,7 +16,7 @@ public class GiftandWaterPooling : MonoBehaviour
 
     int random;
 
-
+    bool canSpawn = true;
     
     void Update()
     {
@@ -24,7 +24,7 @@ public class GiftandWaterPooling : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            GiftSpawn();
+            StartCoroutine(SpawnDelay());
         }
         if (Input.GetKeyDown(KeyCode.G))
         {
@@ -32,6 +32,17 @@ public class GiftandWaterPooling : MonoBehaviour
         }
 
         
+    }
+
+    IEnumerator SpawnDelay()
+    {
+        if (canSpawn)
+        {
+            canSpawn = false;
+            GiftSpawn();
+            yield return new WaitForSeconds(0.3f);
+            canSpawn = true;
+        }
     }
 
     #region GiftSpawner
