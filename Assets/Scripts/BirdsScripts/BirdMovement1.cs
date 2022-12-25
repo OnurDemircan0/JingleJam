@@ -14,6 +14,6 @@ public class BirdMovement1 : MonoBehaviour
     }
     private void Update()
     {
-        transform.position = transform.position + (dir / 7f);
+        transform.position = transform.position + (dir / 3.5f);
     }
 }

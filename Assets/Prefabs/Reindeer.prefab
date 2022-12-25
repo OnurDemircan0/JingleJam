@@ -120,6 +120,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e1c9e4e377718e418178d4f88d7e230, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damacanaSarjor: 0
+  damacana: {fileID: 2018055774244124812, guid: 5d26f2841c4fdbe42924844cc50be124, type: 3}
 --- !u!50 &6537220075910429424
 Rigidbody2D:
   serializedVersion: 4

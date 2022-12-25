@@ -7,10 +7,10 @@ public class ReindeerCrush : MonoBehaviour
 {
     bool hurt = false;
     bool immunity = true;
-
+    public static int damacanaSarjor = 0;
     private void Update()
     {
-        Debug.Log(immunity);
+        //Debug.Log(immunity);
         if (hurt)
         {
             if (immunity)
@@ -20,7 +20,6 @@ public class ReindeerCrush : MonoBehaviour
                 StartCoroutine(Immunity());
             }
         }
-        
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -30,8 +29,12 @@ public class ReindeerCrush : MonoBehaviour
             hurt = true;
             Destroy(collision.gameObject);
         }
+        if (collision.gameObject.CompareTag("Perk"))
+        {
+            damacanaSarjor++;
+            Destroy(collision.gameObject);
+        }
     }
-
     IEnumerator Immunity()
     {
         yield return new WaitForSeconds(4f);

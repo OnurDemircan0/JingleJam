@@ -31,6 +31,7 @@ public class GiftandWaterPooling : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.G))
             {
                 WaterBottleSpawn();
+                ReindeerCrush.damacanaSarjor--;
             }
         }
         
