@@ -14040,6 +14040,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1849315005}
     m_Modifications:
+    - target: {fileID: 1986090973404284192, guid: 9cf1380c09cd8154e85e52458259efae, type: 3}
+      propertyPath: m_Color.a
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2050290365904652357, guid: 9cf1380c09cd8154e85e52458259efae, type: 3}
       propertyPath: m_Name
       value: Reindeer
