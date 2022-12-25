@@ -40,6 +40,7 @@ public class PlayerMovement : MonoBehaviour
         audioS = GetComponent<AudioSource>();
 
         frontReindeer = reindeers[2];
+        health = 3;
     }
 
     // Update is called once per frame
