@@ -25,10 +25,13 @@ public class Dialogue : MonoBehaviour
     [SerializeField] GameObject kurye;
 
     int santaIndex, heroIndex, erkenFinalIndex;
-
+    private void Start()
+    {
+        kurye.GetComponent<SpriteRenderer>().color = Color.HSVToRGB(0, 0, 0.35f);
+        StartCoroutine(Santa());
+    }
     private void Update()
     {
-        Debug.Log(santaIndex);
         if(santaText.text == santaSentences[santaIndex])
         {
             if (santaIndex == 4)
@@ -111,12 +114,6 @@ public class Dialogue : MonoBehaviour
             heroText.text = "";
             startGameButton.SetActive(true);
         }
-    }
-    public void StartDialogue()
-    {
-        kurye.GetComponent<SpriteRenderer>().color = Color.HSVToRGB(0,0,0.35f);
-        StartCoroutine(Santa());
-        startDialogueButton.SetActive(false);
     }
     public void Ilgilenme()
     {
