@@ -171,7 +171,11 @@ public class PlayerMovement : MonoBehaviour
             reindeers[2].transform.position = new Vector3(reindeers[1].transform.position.x + 0.8f, reindeers[1].transform.position.y, 0f);
             reindeers[1].transform.position = new Vector3(reindeers[0].transform.position.x + 0.8f, reindeers[0].transform.position.y, 0f);
             reindeers[0].transform.position = new Vector3(transform.position.x + 1f, transform.position.y, 0f);
-            gameObject.AddComponent<Rigidbody2D>();
+            if (!GetComponent<Rigidbody2D>())
+            {
+                gameObject.AddComponent<Rigidbody2D>();
+            }
+            
         }
 
     }
