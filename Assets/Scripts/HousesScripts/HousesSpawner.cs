@@ -7,6 +7,7 @@ public class HousesSpawner : MonoBehaviour
     [SerializeField] List<GameObject> houses = new List<GameObject> ();
     GameObject sentHouse;
     int random;
+    
     [SerializeField] Transform spawnerPos;
 
     private void Start() 
@@ -19,6 +20,7 @@ public class HousesSpawner : MonoBehaviour
         {
             HouseSpawn();
         }
+        
     }
 
     public void HouseSpawn()
