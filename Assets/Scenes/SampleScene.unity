@@ -11374,7 +11374,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1712572108}
         m_TargetAssemblyTypeName: NextSceneScripts, Assembly-CSharp
-        m_MethodName: NasilOynanirExit
+        m_MethodName: AnaMenu
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -15594,6 +15594,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d52626a793b8fd5419de05a44e4e86bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  oldun: {fileID: 591973434}
+  ruhbitti: {fileID: 528484283}
 --- !u!1 &1732357392
 GameObject:
   m_ObjectHideFlags: 0
@@ -17046,7 +17048,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1712572108}
         m_TargetAssemblyTypeName: NextSceneScripts, Assembly-CSharp
-        m_MethodName: NasilOynanirExit
+        m_MethodName: AnaMenu
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

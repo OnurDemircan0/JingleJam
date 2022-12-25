@@ -11,6 +11,7 @@ public class ChristmasSpirit : MonoBehaviour
     private void Start() 
     {
         InvokeRepeating("FallingSpirit",1,fallingTime);
+        spirit = 100;
     }
 
     private void Update() 

@@ -6,6 +6,8 @@ using UnityEngine.SceneManagement;
 
 public class NextSceneScripts : MonoBehaviour
 {
+    public GameObject oldun;
+    public GameObject ruhbitti;
     private void Start() 
     {
         Time.timeScale = 1;
@@ -40,6 +42,18 @@ public class NextSceneScripts : MonoBehaviour
 
     public void Restart()
     {
+        Time.timeScale = 1;
+        oldun.SetActive(false);
+        ruhbitti.SetActive(false);
+        
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+
+    }
+    public void AnaMenu()
+    {
+        Time.timeScale = 1;
+        oldun.SetActive(false);
+        ruhbitti.SetActive(false);
+        SceneManager.LoadScene("EntryScene");
     }
 }

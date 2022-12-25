@@ -6,23 +6,41 @@ public class GameManagment : MonoBehaviour
 {
     public GameObject oldun;
     public GameObject ruhbitti;
+    bool acikmi;
+    bool acikmi2;
     private void Start() 
     {
         Time.timeScale = 1;
+        oldun.SetActive(false);
+        ruhbitti.SetActive(false);
         Application.targetFrameRate = 60;
     }
     private void Update() 
     {
         if (ChristmasSpirit.spirit <= 0)
         {
-            ruhbitti.SetActive(true);
-            Invoke("Durdur",2);
+            if (acikmi == false)
+            {
+                acikmi = true;
+                ruhbitti.SetActive(true);
+                Invoke("Durdur",2);
+            }
+            
+            
             
         }
         if (PlayerMovement.health <=0)
         {
-            oldun.SetActive(true);
-            Durdur();
+            if (acikmi2 == false)
+            {
+                acikmi2 = true;
+                oldun.SetActive(true);
+                ruhbitti.SetActive(true);
+                Durdur();
+                
+            }
+            
+            
         }
     }
 
