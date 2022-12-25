@@ -5,10 +5,12 @@ using UnityEngine;
 public class FirstGround : MonoBehaviour
 {
     public static bool gameStarted = false;
-    // Start is called before the first frame update
-    void Start()
+
+    AudioSource audioS;
+
+    private void Start()
     {
-        
+        audioS = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -18,11 +20,7 @@ public class FirstGround : MonoBehaviour
         {
             gameStarted = true;
         }
-
-        if (gameStarted)
-        {
-            transform.position = new Vector3(transform.position.x - 10f * Time.deltaTime, transform.position.y, transform.position.z);
-        }
+        Debug.Log(gameStarted + "gameStarted");
         
     }
 

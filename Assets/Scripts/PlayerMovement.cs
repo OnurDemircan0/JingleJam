@@ -7,6 +7,9 @@ public class PlayerMovement : MonoBehaviour
     public GameObject[] reindeers;
     public static GameObject frontReindeer;
 
+    AudioSource audioS;
+    bool doOnce2 = true;
+
     Vector3 dir1;
     Vector3 dir2;
     Vector3 dir3;
@@ -31,6 +34,7 @@ public class PlayerMovement : MonoBehaviour
     private void Start()
     {
         sRend = GetComponent<SpriteRenderer>();
+        audioS = GetComponent<AudioSource>();
 
         frontReindeer = reindeers[2];
     }
@@ -70,6 +74,7 @@ public class PlayerMovement : MonoBehaviour
             frontReindeerPosY = frontReindeer.transform.position.y;
             if (canMove)
             {
+                audioS.volume -= 0.005f;
                 if (Input.GetKey(KeyCode.UpArrow) && frontReindeerPosY < 4.1f)
                 {
                     time = 0;
@@ -111,6 +116,7 @@ public class PlayerMovement : MonoBehaviour
                 frontReindeer.transform.rotation = Quaternion.Euler(0f, 0f, angle);
                 frontReindeer.transform.position = new Vector3(frontReindeer.transform.position.x, frontReindeer.transform.position.y + 2.5f * Time.deltaTime, 0f);
                 angle = Mathf.Clamp(angle, -10f, 10f);
+                StartCoroutine(BellAudio());
             }
 
             // Burasý objelerin bir önündeki objeye bakmasýný saðlýyo.
@@ -175,7 +181,6 @@ public class PlayerMovement : MonoBehaviour
             {
                 gameObject.AddComponent<Rigidbody2D>();
             }
-            
         }
 
     }
@@ -204,4 +209,16 @@ public class PlayerMovement : MonoBehaviour
             doOnce = true;
         }
     }
+
+    IEnumerator BellAudio()
+    {
+        if (doOnce2)
+        {
+            doOnce2 = false;
+            audioS.Play();
+            yield return new WaitForSeconds(2f);
+            doOnce2 = true;
+        }
+    }
+
 }
