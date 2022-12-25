@@ -17601,7 +17601,7 @@ MonoBehaviour:
   - {fileID: 1338500911}
   - {fileID: 351733455}
   - {fileID: 179020924}
-  perkBirdSpawnTimes: 10
+  perkBirdSpawnTimes: 13
 --- !u!1 &1973032151
 GameObject:
   m_ObjectHideFlags: 0
