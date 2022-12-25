@@ -533,7 +533,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &693259223
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2513,7 +2513,7 @@ MonoBehaviour:
   - cocuklara o eski guzel gunleri yasatmak icin hediyeleri dagitmak ister misin?
   - aceleci olma evlat bu is sandigin kadar kolay degil.
   - hediyeleri evlerin tam bacalarina birakman lazim. hediyeler sandigin kadar cok
-    degil ve bosa atarsan noel ruhu kaybedeceksin.
+    degil ve bosa atarsan yilbasi ruhu kaybedeceksin.
   - bunu anlaman icin yasaman gerek evlat. ama ruhu yuksek tutman senin icin iyi
     olacak.
   - aslinda her cocuk hediyeyi hak eder. ama bu yilbasinda yaramaz cocuklara hediye
@@ -2529,7 +2529,7 @@ MonoBehaviour:
   - evet noel baba. bu dogru.
   - bu harika ! o zaman hemen hazirliklara baslamaliyiz.
   - ne yapmam gerekiyor?
-  - noel ruhu da ne?
+  - yilbasi ruhu da ne?
   - anladim. peki baska ne yapmam gerekiyor?
   - bu fikri pek sevmedim. ama sen diyorsan vardir bildigin noel baba.
   - merak etme noel baba. ustesinden gelebilirim. hadi hazirliklara baslayalim.
