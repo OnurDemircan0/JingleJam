@@ -31,8 +31,8 @@ public class PlayerMovement : MonoBehaviour
     SpriteRenderer sRend;
     bool doOnce = true;
 
-    float catchSpeed = 7f;
-    float speed = 4f;
+    float catchSpeed = 3.2f;
+    float speed = 8.8f;
 
     private void Start()
     {
@@ -45,6 +45,37 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(GiftToHouse.score > 5)
+        {
+            catchSpeed = 6.4f;
+            speed = 4.8f;
+        }
+        if(GiftToHouse.score > 10)
+        {
+            catchSpeed = 5.76f;
+            speed = 5.6f;
+        }
+        if (GiftToHouse.score > 15)
+        {
+            catchSpeed = 5.12f;
+            speed = 6.4f;
+        }
+        if (GiftToHouse.score > 20)
+        {
+            catchSpeed = 4.48f;
+            speed = 7.2f;
+        }
+        if (GiftToHouse.score > 25)
+        {
+            catchSpeed = 3.84f;
+            speed = 8f;
+        }
+        if (GiftToHouse.score > 30)
+        {
+            catchSpeed = 3.2f;
+            speed = 8.8f;
+        }
+
         if (health != 0)
         {
             if (health > 0)
