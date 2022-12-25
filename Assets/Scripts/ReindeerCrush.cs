@@ -19,24 +19,24 @@ public class ReindeerCrush : MonoBehaviour
 
     private void Update()
     {
-        StartCoroutine(Immunity());
-        Debug.Log(canHurt);
-        if (!canHurt)
+        //StartCoroutine(Immunity());
+        /*if (!canHurt)
         {
             StartCoroutine(Fade());
-        }
+        }*/
 
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Enemy"))
         {
+            /*
             if (canHurt)
             {
                 immunity = true;
-            }
-            
+            }*/
 
+            PlayerMovement.health--;
             Destroy(collision.gameObject);
         }
         if (collision.gameObject.CompareTag("Perk"))
@@ -52,7 +52,7 @@ public class ReindeerCrush : MonoBehaviour
         {
             canHurt = false;
             immunity = false;
-            PlayerMovement.health--;
+            
             yield return new WaitForSeconds(1.5f);
             canHurt = true;
         }
