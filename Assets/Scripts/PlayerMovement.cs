@@ -14,6 +14,9 @@ public class PlayerMovement : MonoBehaviour
     public float rotSpeed = 40;
     float angle = 0f;
 
+    public float dSpeed = 40; // disappearing speed
+    Vector3 firstScale = new Vector3(1, 1, 1);
+
     public static int health = 3;
 
     public static bool canMove = false;
@@ -126,19 +129,26 @@ public class PlayerMovement : MonoBehaviour
                 reindeers[2].SetActive(true);
                 reindeers[1].SetActive(true);
                 reindeers[0].SetActive(true);
+                reindeers[2].transform.localScale = firstScale;
+                reindeers[1].transform.localScale = firstScale;
+                reindeers[0].transform.localScale = firstScale;
             }
             else if (health == 2)
             {
-                reindeers[2].SetActive(false);
+                StartCoroutine(Disappear(2));
                 reindeers[1].SetActive(true);
                 reindeers[0].SetActive(true);
+                reindeers[1].transform.localScale = firstScale;
+                reindeers[0].transform.localScale = firstScale;
                 reindeers[2].transform.position = new Vector3(reindeers[1].transform.position.x + 0.8f, reindeers[1].transform.position.y, 0f);
             }
             else if (health == 1)
             {
                 reindeers[2].SetActive(false);
-                reindeers[1].SetActive(false);
+                StartCoroutine(Disappear(1));
                 reindeers[0].SetActive(true);
+                reindeers[2].transform.localScale *= (dSpeed * Time.deltaTime);
+                reindeers[0].transform.localScale = firstScale;
                 reindeers[2].transform.position = new Vector3(reindeers[1].transform.position.x + 0.8f, reindeers[1].transform.position.y, 0f);
                 reindeers[1].transform.position = new Vector3(reindeers[0].transform.position.x + 0.8f, reindeers[0].transform.position.y, 0f);
             }
@@ -147,7 +157,7 @@ public class PlayerMovement : MonoBehaviour
         {
             reindeers[2].SetActive(false);
             reindeers[1].SetActive(false);
-            reindeers[0].SetActive(false);
+            StartCoroutine(Disappear(0));
             reindeers[2].transform.position = new Vector3(reindeers[1].transform.position.x + 0.8f, reindeers[1].transform.position.y, 0f);
             reindeers[1].transform.position = new Vector3(reindeers[0].transform.position.x + 0.8f, reindeers[0].transform.position.y, 0f);
             reindeers[0].transform.position = new Vector3(transform.position.x + 1f, transform.position.y, 0f);
@@ -160,6 +170,13 @@ public class PlayerMovement : MonoBehaviour
     {
         yield return new WaitForSeconds(2f);
         canMove = true;
+    }
+
+    IEnumerator Disappear(int i)
+    {
+        reindeers[i].transform.localScale *= (dSpeed * Time.deltaTime);
+        yield return new WaitForSeconds(1f);
+        reindeers[i].SetActive(false);
     }
 
 }
