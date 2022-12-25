@@ -6,11 +6,11 @@ public class FirstGround : MonoBehaviour
 {
     public static bool gameStarted = false;
 
-    AudioSource audioS;
+    
 
     private void Start()
     {
-        audioS = GetComponent<AudioSource>();
+        
     }
 
     // Update is called once per frame
