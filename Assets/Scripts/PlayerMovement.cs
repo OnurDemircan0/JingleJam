@@ -25,8 +25,13 @@ public class PlayerMovement : MonoBehaviour
 
     float frontReindeerPosY;
 
+    SpriteRenderer sRend;
+    bool doOnce = true;
+
     private void Start()
     {
+        sRend = GetComponent<SpriteRenderer>();
+
         frontReindeer = reindeers[2];
     }
 
@@ -152,6 +157,11 @@ public class PlayerMovement : MonoBehaviour
                 reindeers[2].transform.position = new Vector3(reindeers[1].transform.position.x + 0.8f, reindeers[1].transform.position.y, 0f);
                 reindeers[1].transform.position = new Vector3(reindeers[0].transform.position.x + 0.8f, reindeers[0].transform.position.y, 0f);
             }
+
+            if (!ReindeerCrush.canHurt)
+            {
+                StartCoroutine(Fade());
+            }
         }
         else
         {
@@ -161,8 +171,8 @@ public class PlayerMovement : MonoBehaviour
             reindeers[2].transform.position = new Vector3(reindeers[1].transform.position.x + 0.8f, reindeers[1].transform.position.y, 0f);
             reindeers[1].transform.position = new Vector3(reindeers[0].transform.position.x + 0.8f, reindeers[0].transform.position.y, 0f);
             reindeers[0].transform.position = new Vector3(transform.position.x + 1f, transform.position.y, 0f);
+            gameObject.AddComponent<Rigidbody2D>();
         }
-
 
     }
 
@@ -179,4 +189,15 @@ public class PlayerMovement : MonoBehaviour
         reindeers[i].SetActive(false);
     }
 
+    IEnumerator Fade()
+    {
+        if (doOnce)
+        {
+            doOnce = false;
+            sRend.color = new Color(sRend.color.r, sRend.color.g, sRend.color.b, 0.4f);
+            yield return new WaitForSeconds(1.5f);
+            sRend.color = new Color(sRend.color.r, sRend.color.g, sRend.color.b, 1f);
+            doOnce = true;
+        }
+    }
 }
