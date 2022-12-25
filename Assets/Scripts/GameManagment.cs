@@ -13,6 +13,7 @@ public class GameManagment : MonoBehaviour
         Time.timeScale = 1;
         oldun.SetActive(false);
         ruhbitti.SetActive(false);
+        GiftToHouse.score = 0;
         Application.targetFrameRate = 60;
     }
     private void Update() 

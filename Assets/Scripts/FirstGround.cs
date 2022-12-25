@@ -5,7 +5,7 @@ using UnityEngine;
 public class FirstGround : MonoBehaviour
 {
     public static bool gameStarted = false;
-
+    public GameObject saii ;
     
 
     private void Start()
@@ -19,6 +19,10 @@ public class FirstGround : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.UpArrow))
         {
             gameStarted = true;
+        }
+        if (gameStarted == true)
+        {
+            saii.SetActive(false);
         }
         Debug.Log(gameStarted + "gameStarted");
         
