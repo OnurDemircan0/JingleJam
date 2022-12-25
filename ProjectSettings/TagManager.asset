@@ -12,6 +12,7 @@ TagManager:
   - Chimney
   - ChristmasSpirit
   - Ground
+  - Motor
   layers:
   - Default
   - TransparentFX
