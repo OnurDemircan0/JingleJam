@@ -6,10 +6,14 @@ public class DisappearingEffect : MonoBehaviour
 {
     Vector3 firstScale;
     bool disappear = false;
-    AudioSource audioS;
     bool grounded = false;
 
+    AudioSource audioS;
+    public AudioClip audioC1;
+    public AudioClip audioC2;
+
     Rigidbody2D rb2d;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -39,6 +43,7 @@ public class DisappearingEffect : MonoBehaviour
         if (collision.CompareTag("Chimney"))
         {
             disappear = true;
+            audioS.clip = audioC1;
             audioS.Play();
         }
         else if(collision.CompareTag("Ground"))
@@ -46,6 +51,8 @@ public class DisappearingEffect : MonoBehaviour
             grounded = true;
             ChristmasSpirit.spirit -= 10;
             rb2d.simulated = false;
+            audioS.clip = audioC2;
+            audioS.Play();
         }
     }
 

@@ -31,6 +31,8 @@ public class DamacanaSarjor : MonoBehaviour
                 gameObject.transform.GetChild(1).gameObject.SetActive(false);
                 gameObject.transform.GetChild(2).gameObject.SetActive(false);
                 break;
+            case -1: ReindeerCrush.damacanaSarjor = 0;
+                break;
             default:
                 break;
         }

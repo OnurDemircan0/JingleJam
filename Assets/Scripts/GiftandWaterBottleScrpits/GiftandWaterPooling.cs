@@ -24,11 +24,11 @@ public class GiftandWaterPooling : MonoBehaviour
 
         if (PlayerMovement.canMove)
         {
-            if (Input.GetKeyDown(KeyCode.Space))
+            if (Input.GetKeyDown(KeyCode.G))
             {
                 StartCoroutine(SpawnDelay());
             }
-            if (Input.GetKeyDown(KeyCode.G))
+            if (Input.GetKeyDown(KeyCode.F) && ReindeerCrush.damacanaSarjor > 0)
             {
                 WaterBottleSpawn();
                 ReindeerCrush.damacanaSarjor--;
