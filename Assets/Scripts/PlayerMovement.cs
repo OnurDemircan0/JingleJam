@@ -31,8 +31,8 @@ public class PlayerMovement : MonoBehaviour
     SpriteRenderer sRend;
     bool doOnce = true;
 
-    float catchSpeed = 3.2f;
-    float speed = 8.8f;
+    float catchSpeed = 7.04f;
+    float speed = 4f;
 
     private void Start()
     {
