@@ -5,28 +5,33 @@ using UnityEngine;
 
 public class ReindeerCrush : MonoBehaviour
 {
-    bool hurt = false;
-    bool immunity = true;
+    static bool canHurt = true;
+    static bool immunity = false;
     public static int damacanaSarjor = 0;
+
+    Color color;
+
+    private void Start()
+    {
+        color = GetComponent<SpriteRenderer>().material.color;
+    }
+
     private void Update()
     {
-        //Debug.Log(immunity);
-        if (hurt)
-        {
-            if (immunity)
-            {
-                immunity = false;
-                PlayerMovement.health--;
-                StartCoroutine(Immunity());
-            }
-        }
+        StartCoroutine(Immunity());
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Enemy"))
         {
             //Debug.Log(PlayerMovement.health);
-            hurt = true;
+            if (canHurt)
+            {
+                Debug.Log("girdi");
+                immunity = true;
+            }
+            
+
             Destroy(collision.gameObject);
         }
         if (collision.gameObject.CompareTag("Perk"))
@@ -35,10 +40,19 @@ public class ReindeerCrush : MonoBehaviour
             Destroy(collision.gameObject);
         }
     }
+
     IEnumerator Immunity()
     {
-        yield return new WaitForSeconds(4f);
-        immunity = true;
+        if (immunity)
+        {
+            canHurt = false;
+            immunity = false;
+            PlayerMovement.health--;
+            //color.a -= 0.4f;
+            yield return new WaitForSeconds(1.5f);
+            canHurt = true;
+            //color.a += 0.5f;
+        }
     }
 
 }
