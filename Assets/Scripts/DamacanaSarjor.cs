@@ -6,7 +6,6 @@ public class DamacanaSarjor : MonoBehaviour
 {
     void Update()
     {
-        Debug.Log(ReindeerCrush.damacanaSarjor);
         switch (ReindeerCrush.damacanaSarjor)
         {
             case 4: ReindeerCrush.damacanaSarjor = 3;

@@ -5,9 +5,9 @@ using UnityEngine;
 
 public class ReindeerCrush : MonoBehaviour
 {
-    public static bool canHurt = true;
-    static bool immunity = false;
-    public static int damacanaSarjor = 0;
+    public static bool canHurt;
+    static bool immunity;
+    public static int damacanaSarjor;
 
     SpriteRenderer sRend;
 
@@ -15,6 +15,10 @@ public class ReindeerCrush : MonoBehaviour
     private void Start()
     {
         sRend = GetComponent<SpriteRenderer>();
+
+        canHurt = true;
+        immunity = false;
+        damacanaSarjor = 0;
     }
 
     private void Update()

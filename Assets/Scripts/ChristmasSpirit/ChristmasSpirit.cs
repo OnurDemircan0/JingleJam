@@ -5,13 +5,14 @@ using TMPro;
 public class ChristmasSpirit : MonoBehaviour
 {
     public static float spirit = 100;
-    float fallingTime = 1;
+    float fallingTime;
     [SerializeField] TMP_Text spiritText;
 
     private void Start() 
     {
-        InvokeRepeating("FallingSpirit",1,fallingTime);
+        InvokeRepeating(nameof(FallingSpirit), 1,fallingTime);
         spirit = 100;
+        fallingTime = 1;
     }
 
     private void Update() 

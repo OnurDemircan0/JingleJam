@@ -56,4 +56,9 @@ public class NextSceneScripts : MonoBehaviour
         ruhbitti.SetActive(false);
         SceneManager.LoadScene("EntryScene");
     }
+
+    public void StartGame()
+    {
+        SceneManager.LoadScene("SampleScene");
+    }
 }

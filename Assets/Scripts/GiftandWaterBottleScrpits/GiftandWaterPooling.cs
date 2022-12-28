@@ -16,8 +16,13 @@ public class GiftandWaterPooling : MonoBehaviour
 
     int random;
 
-    bool canSpawn = true;
-    
+    bool canSpawn;
+
+    private void Start()
+    {
+        canSpawn = true;
+    }
+
     void Update()
     {
         scoreText.text=GiftToHouse.score.ToString();

@@ -5,7 +5,7 @@ using TMPro;
 
 public class GiftToHouse : MonoBehaviour
 {
-    public static int score = 0;
+    public static int score;
     
    
     private void OnTriggerEnter2D(Collider2D other) 

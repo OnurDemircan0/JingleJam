@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class FirstGround : MonoBehaviour
 {
-    public static bool gameStarted = false;
-    public GameObject saii ;
+    public static bool gameStarted;
+    public GameObject saii;
     
 
     private void Start()
     {
-        
+        gameStarted = false;
     }
 
     // Update is called once per frame
@@ -24,7 +24,6 @@ public class FirstGround : MonoBehaviour
         {
             saii.SetActive(false);
         }
-        Debug.Log(gameStarted + "gameStarted");
         
     }
 

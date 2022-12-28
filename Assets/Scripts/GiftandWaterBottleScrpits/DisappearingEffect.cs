@@ -5,8 +5,8 @@ using UnityEngine;
 public class DisappearingEffect : MonoBehaviour
 {
     Vector3 firstScale;
-    bool disappear = false;
-    bool grounded = false;
+    bool disappear;
+    bool grounded;
 
     AudioSource audioS;
     public AudioClip audioC1;
@@ -20,6 +20,9 @@ public class DisappearingEffect : MonoBehaviour
         rb2d = GetComponent<Rigidbody2D>();
         audioS = GetComponent<AudioSource>();
         firstScale = transform.localScale;
+
+        disappear = false;
+        grounded = false;
     }
 
     // Update is called once per frame

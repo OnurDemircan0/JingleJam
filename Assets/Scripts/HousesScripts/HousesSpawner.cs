@@ -4,40 +4,71 @@ using UnityEngine;
 
 public class HousesSpawner : MonoBehaviour
 {
-    [SerializeField] List<GameObject> houses = new List<GameObject> ();
+    [SerializeField] List<GameObject> houses = new();
     GameObject sentHouse;
-    float spawnerTime = 4;
+    float spawnerTime;
+    float nextSpawnerTime;
+    float spawnSpeed;
     int random;
     
     [SerializeField] Transform spawnerPos;
 
     private void Start() 
     {
-        InvokeRepeating("HouseSpawn",1,spawnerTime);
+        nextSpawnerTime = 4;
+        spawnerTime = nextSpawnerTime;
+        spawnSpeed = 5;
     }
     private void Update() 
     {
         
         if (GiftToHouse.score >= 0 && GiftToHouse.score <= 5)
         {
-            spawnerTime = 4;
+            nextSpawnerTime = 1.5f;
+            spawnSpeed = 7f;
+            SpawnSpeed();
         }
         else if (GiftToHouse.score >= 6 && GiftToHouse.score <= 10)
         {
-            spawnerTime = 3.5f;
+            nextSpawnerTime = 3.5f;
+            spawnSpeed = 5.5f;
+            SpawnSpeed();
         }
         else if (GiftToHouse.score >= 11 && GiftToHouse.score <= 15)
         {
-            spawnerTime = 3;
+            nextSpawnerTime = 3;
+            spawnSpeed = 6.5f;
+            SpawnSpeed();
         }
         else if (GiftToHouse.score >= 16 && GiftToHouse.score <= 20)
         {
-            spawnerTime = 2.5f;
+            nextSpawnerTime = 2.5f;
+            spawnSpeed = 7f;
+            SpawnSpeed();
         }
-        else if (GiftToHouse.score >= 21 && GiftToHouse.score <= 25)
+        else if (GiftToHouse.score >= 21 && GiftToHouse.score <= 26)
         {
-            spawnerTime = 2;
+            nextSpawnerTime = 2;
+            spawnSpeed = 7.5f;
+            SpawnSpeed();
         }
+        else
+        {
+            nextSpawnerTime = 1.5f;
+            spawnSpeed = 8f;
+            SpawnSpeed();
+        }
+
+        if(spawnerTime <= 0)
+        {
+            spawnerTime = nextSpawnerTime;
+            HouseSpawn();
+        }
+        else
+        {
+            spawnerTime -= Time.deltaTime;
+        }
+
         
     }
 
@@ -55,9 +86,18 @@ public class HousesSpawner : MonoBehaviour
     public void GetHouse()
     {
         sentHouse.SetActive(true);
-        sentHouse.GetComponent<Rigidbody2D>().velocity = Vector2.left * 5;
+        sentHouse.transform.position = spawnerPos.position;
+        sentHouse.GetComponent<Rigidbody2D>().velocity = Vector2.left * spawnSpeed;
         
         houses.Add(sentHouse);
-        sentHouse.transform.position = spawnerPos.position;
     }
+
+    void SpawnSpeed()
+    {
+        foreach(GameObject house in houses)
+        {
+            house.GetComponent<Rigidbody2D>().velocity = Vector2.left * spawnSpeed;
+        }
+    }
+
 }

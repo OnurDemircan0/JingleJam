@@ -12,10 +12,11 @@ public class BirdSpawner : MonoBehaviour
     public float birdSpawnTimes;
     public static float spawnTimes;
 
-    public static bool stopSpawnBird = false;
+    public static bool stopSpawnBird;
 
     void Start()
     {
+        stopSpawnBird = false;
         spawnTimes = birdSpawnTimes;
     }
     private void Update()

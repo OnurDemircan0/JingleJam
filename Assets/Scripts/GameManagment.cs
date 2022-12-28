@@ -20,11 +20,11 @@ public class GameManagment : MonoBehaviour
     {
         if (ChristmasSpirit.spirit <= 0)
         {
-            if (acikmi == false)
+            if (!acikmi)
             {
                 acikmi = true;
                 ruhbitti.SetActive(true);
-                Invoke("Durdur",2);
+                Invoke(nameof(Durdur), 2);
             }
             
             
@@ -32,11 +32,10 @@ public class GameManagment : MonoBehaviour
         }
         if (PlayerMovement.health <=0)
         {
-            if (acikmi2 == false)
+            if (!acikmi2)
             {
                 acikmi2 = true;
                 oldun.SetActive(true);
-                ruhbitti.SetActive(true);
                 Durdur();
                 
             }

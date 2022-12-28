@@ -18,11 +18,11 @@ public class PlayerMovement : MonoBehaviour
     float angle = 0f;
 
     public float dSpeed = 40; // disappearing speed
-    Vector3 firstScale = new Vector3(1, 1, 1);
+    Vector3 firstScale = new(1, 1, 1);
 
     public static int health = 3;
 
-    public static bool canMove = false;
+    public static bool canMove;
 
     public static float time = 0f;
 
@@ -31,16 +31,19 @@ public class PlayerMovement : MonoBehaviour
     SpriteRenderer sRend;
     bool doOnce = true;
 
-    float catchSpeed = 7.04f;
-    float speed = 4f;
+    float catchSpeed;
+    float speed;
 
     private void Start()
     {
         sRend = GetComponent<SpriteRenderer>();
         audioS = GetComponent<AudioSource>();
 
+        canMove = false;
         frontReindeer = reindeers[2];
         health = 3;
+        catchSpeed = 7.04f;
+        speed = 4f;
     }
 
     // Update is called once per frame
