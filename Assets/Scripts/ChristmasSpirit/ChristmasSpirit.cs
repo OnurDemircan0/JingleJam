@@ -10,9 +10,9 @@ public class ChristmasSpirit : MonoBehaviour
 
     private void Start() 
     {
-        InvokeRepeating(nameof(FallingSpirit), 1,fallingTime);
         spirit = 100;
         fallingTime = 1;
+        InvokeRepeating(nameof(FallingSpirit), 1,fallingTime);
     }
 
     private void Update() 
@@ -30,6 +30,9 @@ public class ChristmasSpirit : MonoBehaviour
     }
     public void FallingSpirit()
     {
-        spirit--;
+        if (FirstGround.gameStarted)
+        {
+            spirit--;
+        }
     }
 }
