@@ -199,7 +199,7 @@ public class PlayerMovement : MonoBehaviour
                 reindeers[1].transform.position = new Vector3(reindeers[0].transform.position.x + 0.8f, reindeers[0].transform.position.y, 0f);
             }
 
-            if (!ReindeerCrush.canHurt)
+            if (!Crush.canHurt)
             {
                 StartCoroutine(Fade());
             }

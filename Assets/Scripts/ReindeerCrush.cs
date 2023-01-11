@@ -5,29 +5,27 @@ using UnityEngine;
 
 public class ReindeerCrush : MonoBehaviour
 {
-    public static bool canHurt;
-    static bool immunity;
+    
     public static int damacanaSarjor;
 
     SpriteRenderer sRend;
 
-    bool doOnce;
     private void Start()
     {
         sRend = GetComponent<SpriteRenderer>();
 
-        doOnce = true;
-        canHurt = true;
-        immunity = false;
         damacanaSarjor = 0;
     }
 
     private void Update()
     {
-        StartCoroutine(Immunity());
-        if (!canHurt)
+        if (Crush.immunity)
         {
-            StartCoroutine(Fade());
+            sRend.color = new Color(sRend.color.r, sRend.color.g, sRend.color.b, 0.4f);
+        }
+        else
+        {
+            sRend.color = new Color(sRend.color.r, sRend.color.g, sRend.color.b, 1f);
         }
 
     }
@@ -36,10 +34,12 @@ public class ReindeerCrush : MonoBehaviour
         if (collision.gameObject.CompareTag("Enemy"))
         {
             
-            if (canHurt)
+            if (Crush.canHurt)
             {
-                immunity = true;
+                
+                Crush.immunity = true;
                 PlayerMovement.health--;
+
             }
 
             Destroy(collision.gameObject);
@@ -50,29 +50,5 @@ public class ReindeerCrush : MonoBehaviour
             Destroy(collision.gameObject);
         }
     }
-
-    IEnumerator Immunity()
-    {
-        if (immunity)
-        {
-            canHurt = false;
-            immunity = false;
-            
-            yield return new WaitForSeconds(1.5f);
-            canHurt = true;
-        }
-    }
-
-    IEnumerator Fade()
-    {
-        if (doOnce)
-        {
-            doOnce = false;
-            sRend.color = new Color(sRend.color.r, sRend.color.g, sRend.color.b, 0.4f);
-            yield return new WaitForSeconds(1.5f);
-            sRend.color = new Color(sRend.color.r, sRend.color.g, sRend.color.b, 1f);
-            doOnce = true;
-        }
-    }
-
+   
 }
