@@ -117,15 +117,13 @@ public class PlayerMovement : MonoBehaviour
                 {
                     time = 0;
                     angle += rotSpeed * Time.deltaTime;
-                    frontReindeer.transform.rotation = Quaternion.Euler(0f, 0f, angle);
-                    frontReindeer.transform.position = new Vector3(frontReindeer.transform.position.x, frontReindeer.transform.position.y + speed * Time.deltaTime, 0f);
+                    frontReindeer.transform.SetPositionAndRotation(new Vector3(frontReindeer.transform.position.x, frontReindeer.transform.position.y + speed * Time.deltaTime, 0f), Quaternion.Euler(0f, 0f, angle));
                 }
                 else if (Input.GetKey(KeyCode.DownArrow) && frontReindeerPosY > -1.2f)
                 {
                     time = 0;
                     angle -= rotSpeed * Time.deltaTime;
-                    frontReindeer.transform.rotation = Quaternion.Euler(0f, 0f, angle);
-                    frontReindeer.transform.position = new Vector3(frontReindeer.transform.position.x, frontReindeer.transform.position.y - speed * Time.deltaTime, 0f);
+                    frontReindeer.transform.SetPositionAndRotation(new Vector3(frontReindeer.transform.position.x, frontReindeer.transform.position.y - speed * Time.deltaTime, 0f), Quaternion.Euler(0f, 0f, angle));
                 }
                 else
                 {
@@ -151,8 +149,7 @@ public class PlayerMovement : MonoBehaviour
             {
                 StartCoroutine(MoveDelay());
                 angle += 17f * Time.deltaTime;
-                frontReindeer.transform.rotation = Quaternion.Euler(0f, 0f, angle);
-                frontReindeer.transform.position = new Vector3(frontReindeer.transform.position.x, frontReindeer.transform.position.y + 2.5f * Time.deltaTime, 0f);
+                frontReindeer.transform.SetPositionAndRotation(new Vector3(frontReindeer.transform.position.x, frontReindeer.transform.position.y + 2.5f * Time.deltaTime, 0f), Quaternion.Euler(0f, 0f, angle));
                 angle = Mathf.Clamp(angle, -10f, 10f);
                 StartCoroutine(BellAudio());
             }

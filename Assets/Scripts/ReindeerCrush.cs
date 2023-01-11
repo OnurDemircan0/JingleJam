@@ -11,11 +11,12 @@ public class ReindeerCrush : MonoBehaviour
 
     SpriteRenderer sRend;
 
-    bool doOnce = true;
+    bool doOnce;
     private void Start()
     {
         sRend = GetComponent<SpriteRenderer>();
 
+        doOnce = true;
         canHurt = true;
         immunity = false;
         damacanaSarjor = 0;
@@ -23,24 +24,24 @@ public class ReindeerCrush : MonoBehaviour
 
     private void Update()
     {
-        //StartCoroutine(Immunity());
-        /*if (!canHurt)
+        StartCoroutine(Immunity());
+        if (!canHurt)
         {
             StartCoroutine(Fade());
-        }*/
+        }
 
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Enemy"))
         {
-            /*
+            
             if (canHurt)
             {
                 immunity = true;
-            }*/
+                PlayerMovement.health--;
+            }
 
-            PlayerMovement.health--;
             Destroy(collision.gameObject);
         }
         if (collision.gameObject.CompareTag("Perk"))

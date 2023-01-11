@@ -8,7 +8,7 @@ public class HousesSpawner : MonoBehaviour
     GameObject sentHouse;
     float spawnerTime;
     float nextSpawnerTime;
-    float spawnSpeed;
+    float houseSpeed;
     int random;
     
     [SerializeField] Transform spawnerPos;
@@ -17,45 +17,45 @@ public class HousesSpawner : MonoBehaviour
     {
         nextSpawnerTime = 4;
         spawnerTime = nextSpawnerTime;
-        spawnSpeed = 5;
+        houseSpeed = 5;
     }
     private void Update() 
     {
         
         if (GiftToHouse.score >= 0 && GiftToHouse.score <= 5)
         {
-            nextSpawnerTime = 1.5f;
-            spawnSpeed = 7f;
+            nextSpawnerTime = 2.75f;
+            houseSpeed = 7f;
             SpawnSpeed();
         }
         else if (GiftToHouse.score >= 6 && GiftToHouse.score <= 10)
         {
-            nextSpawnerTime = 3.5f;
-            spawnSpeed = 5.5f;
+            nextSpawnerTime = 2.50f;
+            houseSpeed = 5.5f;
             SpawnSpeed();
         }
         else if (GiftToHouse.score >= 11 && GiftToHouse.score <= 15)
         {
-            nextSpawnerTime = 3;
-            spawnSpeed = 6.5f;
+            nextSpawnerTime = 2.25f;
+            houseSpeed = 6.5f;
             SpawnSpeed();
         }
         else if (GiftToHouse.score >= 16 && GiftToHouse.score <= 20)
         {
-            nextSpawnerTime = 2.5f;
-            spawnSpeed = 7f;
+            nextSpawnerTime = 2.0f;
+            houseSpeed = 7f;
             SpawnSpeed();
         }
         else if (GiftToHouse.score >= 21 && GiftToHouse.score <= 26)
         {
-            nextSpawnerTime = 2;
-            spawnSpeed = 7.5f;
+            nextSpawnerTime = 1.75f;
+            houseSpeed = 7.5f;
             SpawnSpeed();
         }
         else
         {
             nextSpawnerTime = 1.5f;
-            spawnSpeed = 8f;
+            houseSpeed = 8f;
             SpawnSpeed();
         }
 
@@ -87,7 +87,7 @@ public class HousesSpawner : MonoBehaviour
     {
         sentHouse.SetActive(true);
         sentHouse.transform.position = spawnerPos.position;
-        sentHouse.GetComponent<Rigidbody2D>().velocity = Vector2.left * spawnSpeed;
+        sentHouse.GetComponent<Rigidbody2D>().velocity = Vector2.left * houseSpeed;
         
         houses.Add(sentHouse);
     }
@@ -96,7 +96,7 @@ public class HousesSpawner : MonoBehaviour
     {
         foreach(GameObject house in houses)
         {
-            house.GetComponent<Rigidbody2D>().velocity = Vector2.left * spawnSpeed;
+            house.GetComponent<Rigidbody2D>().velocity = Vector2.left * houseSpeed;
         }
     }
 
