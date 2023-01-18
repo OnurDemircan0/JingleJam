@@ -198,11 +198,11 @@ public class PlayerMovement : MonoBehaviour
                 reindeers[2].transform.position = new Vector3(reindeers[1].transform.position.x + 0.8f, reindeers[1].transform.position.y, 0f);
                 reindeers[1].transform.position = new Vector3(reindeers[0].transform.position.x + 0.8f, reindeers[0].transform.position.y, 0f);
             }
-
+            /*
             if (!Crush.canHurt)
             {
                 StartCoroutine(Fade());
-            }
+            }*/
         }
         else
         {
@@ -232,7 +232,7 @@ public class PlayerMovement : MonoBehaviour
         yield return new WaitForSeconds(1f);
         reindeers[i].SetActive(false);
     }
-
+    /*
     IEnumerator Fade()
     {
         if (doOnce)
@@ -243,7 +243,7 @@ public class PlayerMovement : MonoBehaviour
             sRend.color = new Color(sRend.color.r, sRend.color.g, sRend.color.b, 1f);
             doOnce = true;
         }
-    }
+    }*/
 
     IEnumerator BellAudio()
     {

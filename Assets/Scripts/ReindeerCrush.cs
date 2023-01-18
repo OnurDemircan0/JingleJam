@@ -16,9 +16,10 @@ public class ReindeerCrush : MonoBehaviour
 
         damacanaSarjor = 0;
     }
-
+    /*
     private void Update()
     {
+        
         if (Crush.immunity)
         {
             sRend.color = new Color(sRend.color.r, sRend.color.g, sRend.color.b, 0.4f);
@@ -28,19 +29,17 @@ public class ReindeerCrush : MonoBehaviour
             sRend.color = new Color(sRend.color.r, sRend.color.g, sRend.color.b, 1f);
         }
 
-    }
+    }*/
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Enemy"))
         {
-            
+            PlayerMovement.health--;
+            /*
             if (Crush.canHurt)
             {
-                
                 Crush.immunity = true;
-                PlayerMovement.health--;
-
-            }
+            }*/
 
             Destroy(collision.gameObject);
         }
